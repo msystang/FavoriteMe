@@ -68,7 +68,7 @@ class SignUpViewController: UIViewController {
     //MARK: - Internal Properties
     let userExperiences = UserExperience.allCases
     
-    var selectedExperience: UserExperience? = nil
+    var selectedExperience: UserExperience = UserExperience.ticketMaster
     
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
