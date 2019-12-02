@@ -9,6 +9,8 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    //TODO: Add cancel button to pop back to LogIn VC
+    
     //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -49,6 +51,7 @@ class SignUpViewController: UIViewController {
     
     lazy var experiencePickerView: UIPickerView = {
         let pickerView = UIPickerView()
+        //TODO: Add options
         return pickerView
     }()
     
@@ -71,14 +74,5 @@ class SignUpViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
