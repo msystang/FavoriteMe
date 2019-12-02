@@ -28,6 +28,7 @@
 		EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */; };
 		EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */; };
 		EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75A2395966F004B6F2E /* String+Validation.swift */; };
+		EA4ED75D2395A16D004B6F2E /* FavoritesViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75C2395A16D004B6F2E /* FavoritesViewController+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UI.swift"; sourceTree = "<group>"; };
 		EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+UI.swift"; sourceTree = "<group>"; };
 		EA4ED75A2395966F004B6F2E /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		EA4ED75C2395A16D004B6F2E /* FavoritesViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
 				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
 				EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */,
+				EA4ED75C2395A16D004B6F2E /* FavoritesViewController+UI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4ED75D2395A16D004B6F2E /* FavoritesViewController+UI.swift in Sources */,
 				EA4ED74C23956B52004B6F2E /* FavoritesViewController.swift in Sources */,
 				EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */,
 				EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */,
