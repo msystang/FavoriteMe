@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
+        label.textColor = .white
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
         label.textAlignment = .center
         return label
@@ -42,10 +43,12 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    //TODO: Update font to match rest of app
     lazy var experienceLabel: UILabel = {
         let label = UILabel()
         label.text = "Choose your experience:"
         label.textAlignment = .center
+        label.textColor = .white
         return label
     }()
     
@@ -53,7 +56,6 @@ class SignUpViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        //TODO: Set delegate/Datasource
         return pickerView
     }()
     
