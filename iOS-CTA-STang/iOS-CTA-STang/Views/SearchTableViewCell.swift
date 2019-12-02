@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class SearchSTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
