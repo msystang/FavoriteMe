@@ -53,7 +53,7 @@ class LogInViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
         button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         button.showsTouchWhenHighlighted = true
-        //        button.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -67,6 +67,12 @@ class LogInViewController: UIViewController {
         addSubviews()
         addConstraints()
         styleObjects()
+    }
+    
+    @objc func createAccountButtonPressed() {
+        let signupVC = SignUpViewController()
+        signupVC.modalPresentationStyle = .formSheet
+        present(signupVC, animated: true, completion: nil)
     }
     
     
