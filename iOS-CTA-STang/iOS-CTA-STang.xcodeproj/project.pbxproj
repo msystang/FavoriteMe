@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED713239567A9004B6F2E /* AppDelegate.swift */; };
 		EA4ED716239567A9004B6F2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED715239567A9004B6F2E /* SceneDelegate.swift */; };
-		EA4ED718239567AA004B6F2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED717239567A9004B6F2E /* ViewController.swift */; };
+		EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED717239567A9004B6F2E /* SearchListViewController.swift */; };
 		EA4ED71B239567AA004B6F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED719239567AA004B6F2E /* Main.storyboard */; };
 		EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED71C239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld */; };
 		EA4ED720239567AC004B6F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED71F239567AC004B6F2E /* Assets.xcassets */; };
 		EA4ED723239567AC004B6F2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED721239567AC004B6F2E /* LaunchScreen.storyboard */; };
 		EA4ED72E239567AC004B6F2E /* iOS_CTA_STangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED72D239567AC004B6F2E /* iOS_CTA_STangTests.swift */; };
+		EA4ED73F23956A70004B6F2E /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED73E23956A70004B6F2E /* AppUser.swift */; };
+		EA4ED74123956AB2004B6F2E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74023956AB2004B6F2E /* Event.swift */; };
+		EA4ED74323956AB9004B6F2E /* MuseumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74223956AB9004B6F2E /* MuseumItem.swift */; };
+		EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74523956AE9004B6F2E /* LogInViewController.swift */; };
+		EA4ED74823956AF8004B6F2E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74723956AF8004B6F2E /* CreateAccountViewController.swift */; };
+		EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */; };
+		EA4ED74C23956B52004B6F2E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */; };
+		EA4ED74E23956D03004B6F2E /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74D23956D03004B6F2E /* ObjectTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +39,7 @@
 		EA4ED710239567A9004B6F2E /* iOS-CTA-STang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-CTA-STang.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4ED713239567A9004B6F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA4ED715239567A9004B6F2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA4ED717239567A9004B6F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA4ED717239567A9004B6F2E /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		EA4ED71A239567AA004B6F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4ED71D239567AA004B6F2E /* iOS_CTA_STang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_CTA_STang.xcdatamodel; sourceTree = "<group>"; };
 		EA4ED71F239567AC004B6F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +48,14 @@
 		EA4ED729239567AC004B6F2E /* iOS-CTA-STangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-CTA-STangTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4ED72D239567AC004B6F2E /* iOS_CTA_STangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CTA_STangTests.swift; sourceTree = "<group>"; };
 		EA4ED72F239567AC004B6F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4ED73E23956A70004B6F2E /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		EA4ED74023956AB2004B6F2E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EA4ED74223956AB9004B6F2E /* MuseumItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItem.swift; sourceTree = "<group>"; };
+		EA4ED74523956AE9004B6F2E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		EA4ED74723956AF8004B6F2E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		EA4ED74D23956D03004B6F2E /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +97,12 @@
 		EA4ED712239567A9004B6F2E /* iOS-CTA-STang */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED738239569CC004B6F2E /* Models */,
+				EA4ED739239569D2004B6F2E /* Controllers */,
+				EA4ED73A239569DB004B6F2E /* Views */,
 				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
-				EA4ED715239567A9004B6F2E /* SceneDelegate.swift */,
-				EA4ED717239567A9004B6F2E /* ViewController.swift */,
-				EA4ED719239567AA004B6F2E /* Main.storyboard */,
-				EA4ED71F239567AC004B6F2E /* Assets.xcassets */,
-				EA4ED721239567AC004B6F2E /* LaunchScreen.storyboard */,
+				EA4ED73B239569E7004B6F2E /* Utilities */,
+				EA4ED73D23956A2D004B6F2E /* Supporting Files */,
 				EA4ED724239567AC004B6F2E /* Info.plist */,
 				EA4ED71C239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld */,
 			);
@@ -100,6 +116,78 @@
 				EA4ED72F239567AC004B6F2E /* Info.plist */,
 			);
 			path = "iOS-CTA-STangTests";
+			sourceTree = "<group>";
+		};
+		EA4ED738239569CC004B6F2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
+				EA4ED74023956AB2004B6F2E /* Event.swift */,
+				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA4ED739239569D2004B6F2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74423956ACE004B6F2E /* Authentication */,
+				EA4ED717239567A9004B6F2E /* SearchListViewController.swift */,
+				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
+				EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA4ED73A239569DB004B6F2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED719239567AA004B6F2E /* Main.storyboard */,
+				EA4ED74D23956D03004B6F2E /* ObjectTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA4ED73B239569E7004B6F2E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED73C239569F5004B6F2E /* Firebase */,
+				EA4ED74F23956DD2004B6F2E /* Networking */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EA4ED73C239569F5004B6F2E /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		EA4ED73D23956A2D004B6F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED721239567AC004B6F2E /* LaunchScreen.storyboard */,
+				EA4ED715239567A9004B6F2E /* SceneDelegate.swift */,
+				EA4ED71F239567AC004B6F2E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA4ED74423956ACE004B6F2E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74523956AE9004B6F2E /* LogInViewController.swift */,
+				EA4ED74723956AF8004B6F2E /* CreateAccountViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EA4ED74F23956DD2004B6F2E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4ED74C23956B52004B6F2E /* FavoritesViewController.swift in Sources */,
 				EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */,
-				EA4ED718239567AA004B6F2E /* ViewController.swift in Sources */,
+				EA4ED74E23956D03004B6F2E /* ObjectTableViewCell.swift in Sources */,
+				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,
+				EA4ED73F23956A70004B6F2E /* AppUser.swift in Sources */,
+				EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */,
+				EA4ED74323956AB9004B6F2E /* MuseumItem.swift in Sources */,
+				EA4ED74823956AF8004B6F2E /* CreateAccountViewController.swift in Sources */,
+				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,
+				EA4ED74123956AB2004B6F2E /* Event.swift in Sources */,
 				EA4ED716239567A9004B6F2E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
