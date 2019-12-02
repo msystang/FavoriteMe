@@ -20,11 +20,15 @@ extension SignUpViewController {
     func addSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(signUpStackView)
+        view.addSubview(experiencePickerView)
+        view.addSubview(signUpButton)
     }
     
     func addConstraints() {
         setTitleLabelConstraints()
         setSignUpStackViewConstraints()
+        setExperiencePickerViewConstraints()
+        setSignUpButtonConstraints()
     }
     
     private func setTitleLabelConstraints() {
@@ -42,15 +46,37 @@ extension SignUpViewController {
         signUpStackView.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint.activate([
+            signUpStackView.bottomAnchor.constraint(equalTo: view.centerYAnchor),
+            signUpStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signUpStackView.heightAnchor.constraint(lessThanOrEqualToConstant: 100),
+            emailTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            passwordTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+        ])
+    }
+    
+    private func setExperiencePickerViewConstraints() {
+        experiencePickerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            experiencePickerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            experiencePickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            experiencePickerView.topAnchor.constraint(equalTo: signUpStackView.bottomAnchor),
+            experiencePickerView.heightAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2)
+        ])
+    }
+    
+    private func setSignUpButtonConstraints() {
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            signUpStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            signUpStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signUpStackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3),
-            emailTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            passwordTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            signUpButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5)
+            signUpButton.topAnchor.constraint(equalTo: experiencePickerView.bottomAnchor),
+            signUpButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            signUpButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5),
+            signUpButton.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 

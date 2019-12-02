@@ -40,8 +40,13 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    lazy var experiencePickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        return pickerView
+    }()
+    
     lazy var signUpStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, signUpButton])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
         stackView.axis = .vertical

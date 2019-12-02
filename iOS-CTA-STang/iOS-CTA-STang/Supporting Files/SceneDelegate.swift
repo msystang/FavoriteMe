@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        window?.rootViewController = SearchListViewController()
+        window?.rootViewController = SignUpViewController()
         
 //        if FirebaseAuthService.manager.currentUser != nil {
 //            if FirebaseAuthService.manager.currentUser?.photoURL != nil {
