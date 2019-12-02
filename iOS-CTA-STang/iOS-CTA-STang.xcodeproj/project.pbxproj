@@ -116,7 +116,6 @@
 				EA4ED73A239569DB004B6F2E /* Views */,
 				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
 				EA4ED73B239569E7004B6F2E /* Utilities */,
-				EA4ED7592395965C004B6F2E /* Extensions */,
 				EA4ED73D23956A2D004B6F2E /* Supporting Files */,
 				EA4ED724239567AC004B6F2E /* Info.plist */,
 				EA4ED71C239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld */,
@@ -169,6 +168,7 @@
 				EA4ED73C239569F5004B6F2E /* Firebase */,
 				EA4ED74F23956DD2004B6F2E /* Networking */,
 				EA4ED75223957758004B6F2E /* UIDesign */,
+				EA4ED7592395965C004B6F2E /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
