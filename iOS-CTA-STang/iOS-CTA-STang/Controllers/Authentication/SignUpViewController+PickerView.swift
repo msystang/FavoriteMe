@@ -1,5 +1,5 @@
 //
-//  API.swift
+//  SignUpViewController+PickerView.swift
 //  iOS-CTA-STang
 //
 //  Created by Sunni Tang on 12/2/19.
@@ -7,8 +7,3 @@
 //
 
 import Foundation
-
-enum Experience: String {
-    case ticketMaster = "Ticketmaster"
-    case rijksmuseum = "Rijksmuseum"
-}
