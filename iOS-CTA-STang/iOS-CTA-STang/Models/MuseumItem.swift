@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Item {
+struct MuseumItem {
     
 }
