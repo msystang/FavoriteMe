@@ -114,7 +114,6 @@
 				EA4ED738239569CC004B6F2E /* Models */,
 				EA4ED739239569D2004B6F2E /* Controllers */,
 				EA4ED73A239569DB004B6F2E /* Views */,
-				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
 				EA4ED73B239569E7004B6F2E /* Utilities */,
 				EA4ED73D23956A2D004B6F2E /* Supporting Files */,
 				EA4ED724239567AC004B6F2E /* Info.plist */,
@@ -184,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED721239567AC004B6F2E /* LaunchScreen.storyboard */,
+				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
 				EA4ED715239567A9004B6F2E /* SceneDelegate.swift */,
 				EA4ED71F239567AC004B6F2E /* Assets.xcassets */,
 			);
