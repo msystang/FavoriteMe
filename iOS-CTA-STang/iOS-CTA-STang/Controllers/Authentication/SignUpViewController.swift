@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Email"
-//        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return textField
     }()
     
@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Enter Password"
         textField.isSecureTextEntry = true
-//        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return textField
     }()
     
@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
     
     lazy var experiencePickerView: UIPickerView = {
         let pickerView = UIPickerView()
-        //TODO: Add options
+        //TODO: Set delegate/Datasource
         return pickerView
     }()
     
@@ -63,6 +63,7 @@ class SignUpViewController: UIViewController {
         return stackView
     }()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,6 +74,14 @@ class SignUpViewController: UIViewController {
         styleObjects()
     }
     
-
+    //MARK: - Objc Functions
+    @objc func validateFields() {
+        guard emailTextField.hasText, passwordTextField.hasText else {
+            //TODO: Change style of button when enabled/disabled
+            signUpButton.isEnabled = false
+            return
+        }
+        signUpButton.isEnabled = true
+    }
 
 }

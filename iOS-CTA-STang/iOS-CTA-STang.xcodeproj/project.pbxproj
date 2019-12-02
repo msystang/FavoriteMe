@@ -27,6 +27,7 @@
 		EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75323957771004B6F2E /* UIDesign.swift */; };
 		EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */; };
 		EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */; };
+		EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75A2395966F004B6F2E /* String+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		EA4ED75323957771004B6F2E /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
 		EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UI.swift"; sourceTree = "<group>"; };
 		EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+UI.swift"; sourceTree = "<group>"; };
+		EA4ED75A2395966F004B6F2E /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				EA4ED73A239569DB004B6F2E /* Views */,
 				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
 				EA4ED73B239569E7004B6F2E /* Utilities */,
+				EA4ED7592395965C004B6F2E /* Extensions */,
 				EA4ED73D23956A2D004B6F2E /* Supporting Files */,
 				EA4ED724239567AC004B6F2E /* Info.plist */,
 				EA4ED71C239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld */,
@@ -160,9 +163,9 @@
 		EA4ED73B239569E7004B6F2E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				EA4ED75223957758004B6F2E /* UIDesign */,
 				EA4ED73C239569F5004B6F2E /* Firebase */,
 				EA4ED74F23956DD2004B6F2E /* Networking */,
+				EA4ED75223957758004B6F2E /* UIDesign */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -208,6 +211,14 @@
 				EA4ED75323957771004B6F2E /* UIDesign.swift */,
 			);
 			path = UIDesign;
+			sourceTree = "<group>";
+		};
+		EA4ED7592395965C004B6F2E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED75A2395966F004B6F2E /* String+Validation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				EA4ED74323956AB9004B6F2E /* MuseumItem.swift in Sources */,
 				EA4ED74823956AF8004B6F2E /* SignUpViewController.swift in Sources */,
 				EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */,
+				EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */,
 				EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */,
 				EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */,
 				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,

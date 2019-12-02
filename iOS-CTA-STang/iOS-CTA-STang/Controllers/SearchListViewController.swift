@@ -12,12 +12,14 @@ class SearchListViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
+        //TODO: Set delegate/Datasource
         return searchBar
     }()
     
     lazy var objectTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
+        //TODO: Set delegate/Datasource
         return tableView
     }()
     
