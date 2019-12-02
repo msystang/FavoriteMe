@@ -38,10 +38,11 @@ extension LogInViewController {
         NSLayoutConstraint.activate([
             logInStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             logInStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logInStackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3),
+            logInStackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2),
             emailTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             passwordTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            loginButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3)
+            loginButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3),
+            loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
