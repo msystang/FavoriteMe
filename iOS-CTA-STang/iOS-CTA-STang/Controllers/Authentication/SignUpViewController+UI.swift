@@ -20,6 +20,7 @@ extension SignUpViewController {
     func addSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(signUpStackView)
+        view.addSubview(experienceLabel)
         view.addSubview(experiencePickerView)
         view.addSubview(signUpButton)
     }
@@ -27,6 +28,7 @@ extension SignUpViewController {
     func addConstraints() {
         setTitleLabelConstraints()
         setSignUpStackViewConstraints()
+        setExperienceLabelConstraints()
         setExperiencePickerViewConstraints()
         setSignUpButtonConstraints()
     }
@@ -57,13 +59,24 @@ extension SignUpViewController {
         ])
     }
     
+    private func setExperienceLabelConstraints() {
+        experienceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            experienceLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            experienceLabel.topAnchor.constraint(equalTo: signUpStackView.bottomAnchor, constant: 15),
+            experienceLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            experienceLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
     private func setExperiencePickerViewConstraints() {
         experiencePickerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             experiencePickerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             experiencePickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            experiencePickerView.topAnchor.constraint(equalTo: signUpStackView.bottomAnchor),
+            experiencePickerView.topAnchor.constraint(equalTo: experienceLabel.bottomAnchor),
             experiencePickerView.heightAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2)
         ])
     }

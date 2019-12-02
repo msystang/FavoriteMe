@@ -40,6 +40,13 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    lazy var experienceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Choose your experience:"
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var experiencePickerView: UIPickerView = {
         let pickerView = UIPickerView()
         return pickerView
