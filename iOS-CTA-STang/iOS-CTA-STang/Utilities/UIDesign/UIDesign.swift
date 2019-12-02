@@ -9,6 +9,8 @@
 import UIKit
 
 struct UIDesign {
+    //TODO: Make background a gradient?
+    
     static func styleTextField(_ textField: UITextField) {
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
