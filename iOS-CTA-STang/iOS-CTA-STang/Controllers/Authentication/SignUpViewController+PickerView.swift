@@ -14,10 +14,10 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return experiences.count
+        return userExperiences.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return experiences[row]
+        return userExperiences[row].rawValue
     }
 }

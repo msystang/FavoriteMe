@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum UserExperience: String {
+enum UserExperience: String, CaseIterable {
     case ticketMaster = "Ticketmaster"
     case rijksmuseum = "Rijksmuseum"
     
-    static let userExperiences: [String] = [ticketMaster.rawValue, rijksmuseum.rawValue]
+//    static let userExperiences: [String] = [ticketMaster.rawValue, rijksmuseum.rawValue]
 }
