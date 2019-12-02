@@ -36,6 +36,7 @@
 		EA4ED7652395AE29004B6F2E /* SignUpViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7642395AE29004B6F2E /* SignUpViewController+PickerView.swift */; };
 		EA4ED7692395BAE3004B6F2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED7682395BAE3004B6F2E /* GoogleService-Info.plist */; };
 		EA4ED76D2395C719004B6F2E /* ViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED76C2395C719004B6F2E /* ViewController+Alerts.swift */; };
+		EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		EA4ED7642395AE29004B6F2E /* SignUpViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+PickerView.swift"; sourceTree = "<group>"; };
 		EA4ED7682395BAE3004B6F2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA4ED76C2395C719004B6F2E /* ViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alerts.swift"; sourceTree = "<group>"; };
+		EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		EA4ED73C239569F5004B6F2E /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */,
 				EA4ED74E23956D03004B6F2E /* SearchTableViewCell.swift in Sources */,
 				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
+				EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,
 				EA4ED73F23956A70004B6F2E /* AppUser.swift in Sources */,
 				EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */,
