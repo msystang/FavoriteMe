@@ -51,6 +51,8 @@ class SignUpViewController: UIViewController {
     
     lazy var experiencePickerView: UIPickerView = {
         let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
         //TODO: Set delegate/Datasource
         return pickerView
     }()
@@ -62,6 +64,9 @@ class SignUpViewController: UIViewController {
         stackView.axis = .vertical
         return stackView
     }()
+    
+    //MARK: - Internal Properties
+    let userExperiences: [String] = Experience.experiences
     
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
