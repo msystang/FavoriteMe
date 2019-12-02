@@ -198,11 +198,8 @@
 		EA4ED74423956ACE004B6F2E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				EA4ED74523956AE9004B6F2E /* LogInViewController.swift */,
-				EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */,
-				EA4ED74723956AF8004B6F2E /* SignUpViewController.swift */,
-				EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */,
-				EA4ED7642395AE29004B6F2E /* SignUpViewController+PickerView.swift */,
+				EA4ED7672395BA1A004B6F2E /* LogIn */,
+				EA4ED7662395BA0B004B6F2E /* SignUp */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -247,6 +244,25 @@
 				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		EA4ED7662395BA0B004B6F2E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74723956AF8004B6F2E /* SignUpViewController.swift */,
+				EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */,
+				EA4ED7642395AE29004B6F2E /* SignUpViewController+PickerView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		EA4ED7672395BA1A004B6F2E /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74523956AE9004B6F2E /* LogInViewController.swift */,
+				EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
