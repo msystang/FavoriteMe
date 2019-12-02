@@ -9,7 +9,44 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    //MARK: - UI Objects
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sign Up"
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
+        label.textAlignment = .center
+        return label
+    }()
     
+    lazy var emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter Email"
+//        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return textField
+    }()
+    
+    lazy var passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter Password"
+        textField.isSecureTextEntry = true
+//        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return textField
+    }()
+    
+    lazy var signUpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Create New Account", for: .normal)
+//        button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var signUpStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, signUpButton])
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.axis = .vertical
+        return stackView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
