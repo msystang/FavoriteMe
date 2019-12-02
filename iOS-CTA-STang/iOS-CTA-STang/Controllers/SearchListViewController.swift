@@ -16,7 +16,7 @@ class SearchListViewController: UIViewController {
         return searchBar
     }()
     
-    lazy var objectTableView: UITableView = {
+    lazy var searchTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         //TODO: Set delegate/Datasource

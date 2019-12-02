@@ -11,12 +11,12 @@ import UIKit
 extension SearchListViewController {
     func addSubviews() {
         view.addSubview(searchBar)
-        view.addSubview(objectTableView)
+        view.addSubview(searchTableView)
     }
     
     func addConstraints() {
         setSearchBarConstraints()
-        setObjectTableViewConstraints()
+        setSearchTableViewConstraints()
     }
     
     private func setSearchBarConstraints() {
@@ -29,14 +29,14 @@ extension SearchListViewController {
         ])
     }
     
-    private func setObjectTableViewConstraints() {
-        objectTableView.translatesAutoresizingMaskIntoConstraints = false
+    private func setSearchTableViewConstraints() {
+        searchTableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            objectTableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            objectTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            objectTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            objectTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            searchTableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            searchTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            searchTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            searchTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
