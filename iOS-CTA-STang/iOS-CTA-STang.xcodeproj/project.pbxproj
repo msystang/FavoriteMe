@@ -26,6 +26,7 @@
 		EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */; };
 		EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75323957771004B6F2E /* UIDesign.swift */; };
 		EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */; };
+		EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogInViewController+UI.swift"; sourceTree = "<group>"; };
 		EA4ED75323957771004B6F2E /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
 		EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UI.swift"; sourceTree = "<group>"; };
+		EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				EA4ED74423956ACE004B6F2E /* Authentication */,
 				EA4ED717239567A9004B6F2E /* SearchListViewController.swift */,
+				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
 				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
 				EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */,
 			);
@@ -310,6 +313,7 @@
 			files = (
 				EA4ED74C23956B52004B6F2E /* FavoritesViewController.swift in Sources */,
 				EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */,
+				EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */,
 				EA4ED74E23956D03004B6F2E /* ObjectTableViewCell.swift in Sources */,
 				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,

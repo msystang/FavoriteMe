@@ -9,10 +9,25 @@
 import UIKit
 
 class SearchListViewController: UIViewController {
-
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.searchBarStyle = .minimal
+        return searchBar
+    }()
+    
+    lazy var objectTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        
+        addSubviews()
+        addConstraints()
     }
 
 
