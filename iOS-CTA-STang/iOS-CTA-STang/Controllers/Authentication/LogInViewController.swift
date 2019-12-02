@@ -9,9 +9,12 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-
+    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .yellow
 
         // Do any additional setup after loading the view.
     }
