@@ -25,6 +25,7 @@
 		EA4ED74E23956D03004B6F2E /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74D23956D03004B6F2E /* ObjectTableViewCell.swift */; };
 		EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */; };
 		EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75323957771004B6F2E /* UIDesign.swift */; };
+		EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		EA4ED74D23956D03004B6F2E /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 		EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogInViewController+UI.swift"; sourceTree = "<group>"; };
 		EA4ED75323957771004B6F2E /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
+		EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				EA4ED74523956AE9004B6F2E /* LogInViewController.swift */,
 				EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */,
 				EA4ED74723956AF8004B6F2E /* SignUpViewController.swift */,
+				EA4ED75523957E2F004B6F2E /* SignUpViewController+UI.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */,
 				EA4ED74323956AB9004B6F2E /* MuseumItem.swift in Sources */,
 				EA4ED74823956AF8004B6F2E /* SignUpViewController.swift in Sources */,
+				EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */,
 				EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */,
 				EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */,
 				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,
