@@ -32,12 +32,15 @@ extension SearchListViewController: UITableViewDataSource {
             case UserExperience.ticketMaster:
                 let event = events[indexPath.row]
                 
+                //TODO: Use formatted Date
                 cell.titleLabel.text = event.name
+                cell.detailLabel.text = event.dates.start.dateTime
                 
             case UserExperience.rijksmuseum:
                 let museumItem = museumItems[indexPath.row]
                 
                 cell.titleLabel.text = museumItem.title
+                cell.detailLabel.text = museumItem.principalOrFirstMaker
             }
         }
         

@@ -35,6 +35,7 @@ class SearchTableViewCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, detailLabel])
         stackView.alignment = .center
         stackView.axis = .vertical
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
