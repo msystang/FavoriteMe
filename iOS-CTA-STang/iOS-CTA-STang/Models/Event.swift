@@ -45,7 +45,6 @@ struct EventImage: Codable {
     let url: String
 }
 
-
 struct EventDateWrapper: Codable {
     let start: EventDate
 }

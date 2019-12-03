@@ -16,7 +16,7 @@ struct AppUser {
     let selectedExperience: String?
     let dateCreated: Date?
     
-    //Encoding to Firestore
+    //Instatiating to 'encode' to Firestore
     init(from user: User, selectedExperience: UserExperience) {
         self.email = user.email
         self.uid = user.uid
@@ -24,7 +24,7 @@ struct AppUser {
         self.dateCreated = user.metadata.creationDate
     }
     
-    //Decoding to Firestore
+    //Instatiating when 'decoding' from Firestore
     init?(from dict: [String: Any], id: String) {
         guard let email = dict["email"] as? String,
             let selectedExperience = dict["selectedExperience"] as? String,

@@ -17,7 +17,7 @@ struct Favorite {
     let isFavorite: Bool
     let dateCreated: Date?
     
-    //Encoding to Firestore
+    //Instatiating to 'encode' to Firestore
     init(creatorID: String, title: String, details: String, isFavorite: Bool = true, dateCreated: Date? = nil) {
         self.id = UUID().description
         self.creatorID = creatorID
@@ -27,7 +27,7 @@ struct Favorite {
         self.dateCreated = dateCreated
     }
     
-    //Decoding from Firestore
+    //Instatiating when 'decoding' from Firestore
     init?(from dict: [String: Any], id: String) {
         guard let userID = dict["creatorID"] as? String,
         let title = dict["title"] as? String,

@@ -21,25 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        window?.rootViewController = LogInViewController()
         
-//        if FirebaseAuthService.manager.currentUser != nil {
-//            if FirebaseAuthService.manager.currentUser?.photoURL != nil {
-//                window?.rootViewController = {
-//                    let feedVC = AppTabBarViewController()
-//                    feedVC.selectedIndex = 0
-//                    return feedVC
-//                }()
-//            } else {
-//                window?.rootViewController = {
-//                    let profileVC = AppTabBarViewController()
-//                    profileVC.selectedIndex = 2
-//                    return profileVC
-//                }()
-//            }
-//        } else {
-//            window?.rootViewController = LogInViewController()
-//        }
+        if FirebaseAuthService.manager.currentUser != nil {
+            window?.rootViewController = {
+                let searchVC = AppTabBarViewController()
+                searchVC.selectedIndex = 0
+                return searchVC
+            }()
+        } else {
+            window?.rootViewController = LogInViewController()
+        }
         
         window?.makeKeyAndVisible()
         
