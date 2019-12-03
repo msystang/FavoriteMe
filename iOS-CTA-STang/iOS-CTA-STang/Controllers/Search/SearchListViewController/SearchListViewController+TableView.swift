@@ -91,6 +91,10 @@ extension SearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Segue to detailVC
+        // Pass information into DetailsVC
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController")
+        self.present(detailsVC, animated: true, completion: nil)
+        
     }
 }
