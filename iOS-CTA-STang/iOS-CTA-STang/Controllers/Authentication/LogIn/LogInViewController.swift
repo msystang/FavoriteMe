@@ -9,7 +9,7 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    // MARK: - UI Objects
+    //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Title"
@@ -35,7 +35,7 @@ class LogInViewController: UIViewController {
     lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
-        //        button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -58,7 +58,7 @@ class LogInViewController: UIViewController {
     }()
     
     
-    // MARK: - Lifecycle Methods
+    //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,12 +69,57 @@ class LogInViewController: UIViewController {
         styleObjects()
     }
     
+    //MARK: - Objc Functions
     @objc func createAccountButtonPressed() {
         let signupVC = SignUpViewController()
         signupVC.modalPresentationStyle = .formSheet
         present(signupVC, animated: true, completion: nil)
     }
     
+    @objc func loginButtonPressed() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(title: "Error", message: "Please fill out all fields.")
+            return
+        }
+        
+        //MARK: TODO - remove whitespace (if any) from email/password
+        
+        guard email.isValidEmail else {
+            showAlert(title: "Error", message: "Please enter a valid email")
+            return
+        }
+        
+        guard password.isValidPassword else {
+            showAlert(title: "Error", message: "Please enter a valid password. Passwords must have at least 8 characters.")
+            return
+        }
+        
+        FirebaseAuthService.manager.loginUser(email: email.lowercased(), password: password) { (result) in
+            self.handleLoginResponse(with: result)
+        }
+    }
     
-    
+    //MARK: - Private Methods
+    private func handleLoginResponse(with result: Result<(), Error>) {
+        switch result {
+        case .failure(let error):
+            showAlert(title: "Error", message: "Could not log in. Error: \(error)")
+        case .success:
+            
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+                else {
+                    return
+            }
+            
+            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+                    window.rootViewController = {
+                        let searchVC = AppTabBarViewController()
+                            searchVC.selectedIndex = 0
+                        return searchVC
+                    }()
+            }, completion: nil)
+
+        }
+    }
 }
