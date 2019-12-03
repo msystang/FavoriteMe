@@ -51,6 +51,7 @@
 		EA4ED7832396F826004B6F2E /* EventAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7822396F826004B6F2E /* EventAPIClient.swift */; };
 		EA4ED7852396F841004B6F2E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7842396F841004B6F2E /* AppError.swift */; };
 		EA4ED7872396F8B0004B6F2E /* MuseumItemAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */; };
+		EA4ED789239700D1004B6F2E /* SearchListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		EA4ED7822396F826004B6F2E /* EventAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIClient.swift; sourceTree = "<group>"; };
 		EA4ED7842396F841004B6F2E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemAPIClient.swift; sourceTree = "<group>"; };
+		EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+SearchBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED717239567A9004B6F2E /* SearchListViewController.swift */,
+				EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */,
 				EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */,
 				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
 				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
@@ -523,6 +526,7 @@
 				EA4ED7832396F826004B6F2E /* EventAPIClient.swift in Sources */,
 				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
 				EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */,
+				EA4ED789239700D1004B6F2E /* SearchListViewController+SearchBar.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,
 				EA4ED73F23956A70004B6F2E /* AppUser.swift in Sources */,
 				EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */,

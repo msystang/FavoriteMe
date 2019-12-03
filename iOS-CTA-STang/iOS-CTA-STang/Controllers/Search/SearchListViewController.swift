@@ -13,7 +13,7 @@ class SearchListViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
-        //TODO: Set delegate/Datasource
+        searchBar.delegate = self
         return searchBar
     }()
     
@@ -22,23 +22,18 @@ class SearchListViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
         return tableView
     }()
     
     //MARK: - Internal Methods
-    var currentUser: AppUser!
-    
-    var selectedExperience: UserExperience {
-        switch currentUser.selectedExperience {
-        case "Ticketmaster":
-            return UserExperience.ticketMaster
-        case "Rijksmuseum":
-            return UserExperience.rijksmuseum
-        default:
-            return UserExperience.ticketMaster
+    var currentUser: AppUser! {
+        didSet {
+            assignSelectedExperience()
         }
-        
     }
+    
+    var selectedExperience: UserExperience? = nil
     
     var events = [Event]() {
         didSet {
@@ -49,6 +44,12 @@ class SearchListViewController: UIViewController {
     var museumItems = [MuseumItem]() {
         didSet {
             searchTableView.reloadData()
+        }
+    }
+    
+    var searchString: String? = nil {
+        didSet {
+            determineUserExperience()
         }
     }
     
@@ -72,15 +73,61 @@ class SearchListViewController: UIViewController {
                 print(error)
             case .success(let appUser):
                 self?.currentUser = appUser
-                self?.loadSearchResults()
             }
         }
     }
     
-    private func loadSearchResults() {
-        // switch API client
-        // load Data
+    private func assignSelectedExperience() {
+        switch currentUser.selectedExperience {
+        case "Ticketmaster":
+            selectedExperience = UserExperience.ticketMaster
+        case "Rijksmuseum":
+            selectedExperience = UserExperience.rijksmuseum
+        default:
+            selectedExperience = UserExperience.ticketMaster
+        }
     }
     
+    private func determineUserExperience() {
+        if selectedExperience != nil {
+            switch selectedExperience! {
+            case UserExperience.ticketMaster:
+                loadEvents()
+            case UserExperience.rijksmuseum:
+                loadMuseumItems()
+            }
+        }
+    }
+    
+    private func loadEvents() {
+        let urlStr = EventAPIClient.getSearchResultsURLStr(from: searchString ?? "")
+        
+        EventAPIClient.manager.getEvent(urlStr: urlStr) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let eventsFromOnline):
+                    self?.events = eventsFromOnline
+                }
+            }
+        }
+    }
+    
+    private func loadMuseumItems() {
+        let urlStr = MuseumItemAPIClient.getSearchResultsURLStr(from: searchString ?? "")
+        
+        MuseumItemAPIClient.manager.getMuseumItem(urlStr: urlStr) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let museumItemsFromOnline):
+                    self?.museumItems = museumItemsFromOnline
+                }
+            }
+        }
+        
+    }
 }
 
