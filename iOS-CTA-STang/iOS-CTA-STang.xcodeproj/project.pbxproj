@@ -53,6 +53,7 @@
 		EA4ED7872396F8B0004B6F2E /* MuseumItemAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */; };
 		EA4ED789239700D1004B6F2E /* SearchListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */; };
 		EA4ED78C239711AF004B6F2E /* SearchTableViewCell+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */; };
+		EA4ED78F23971AB7004B6F2E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemAPIClient.swift; sourceTree = "<group>"; };
 		EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTableViewCell+UI.swift"; sourceTree = "<group>"; };
+		EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED7802396F803004B6F2E /* NetworkManager.swift */,
+				EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */,
 				EA4ED7842396F841004B6F2E /* AppError.swift */,
 				EA4ED78D23971A93004B6F2E /* APIClients */,
 			);
@@ -568,6 +571,7 @@
 				EA4ED74123956AB2004B6F2E /* Event.swift in Sources */,
 				EA4ED716239567A9004B6F2E /* SceneDelegate.swift in Sources */,
 				EA4ED78C239711AF004B6F2E /* SearchTableViewCell+UI.swift in Sources */,
+				EA4ED78F23971AB7004B6F2E /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
