@@ -10,6 +10,14 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var detailImageView: UIImageView!
+    
+    @IBOutlet weak var detailTitleLabel: UILabel!
+    
+    @IBOutlet weak var detailTextView: UITextView!
+    
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,12 +27,9 @@ class DetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        /* TODO: Presenting DetailsVC modally in didSelect in tableview.
-         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         let controller = storyboard.instantiateViewController(withIdentifier: "DetailsViewController")
-         self.present(controller, animated: true, completion: nil)
-         */
     }
     
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+    }
     
 }

@@ -22,9 +22,9 @@
                                     <constraint firstAttribute="width" secondItem="raP-pP-4MV" secondAttribute="height" multiplier="1:1" id="Aiu-Mu-HG1"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-df-ee6">
-                                <rect key="frame" x="50" y="458.5" width="314" height="383.5"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-df-ee6">
+                                <rect key="frame" x="50" y="458.5" width="314" height="313.5"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -35,25 +35,47 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBK-Zk-gat">
+                                <rect key="frame" x="182" y="792" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BBK-Zk-gat" secondAttribute="height" multiplier="1:1" id="QhS-dz-uQN"/>
+                                    <constraint firstAttribute="width" constant="50" id="Zbp-RP-iT1"/>
+                                </constraints>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K63-Xi-Tw2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.6588235294117647" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Hh-Ji-49K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8B8-F9-Mv1"/>
                             <constraint firstItem="eAO-df-ee6" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="Ht5-04-Lik"/>
                             <constraint firstItem="9Hh-Ji-49K" firstAttribute="top" secondItem="raP-pP-4MV" secondAttribute="bottom" constant="20" id="KXF-ZG-MiD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eAO-df-ee6" secondAttribute="bottom" constant="20" id="TMF-y2-IX4"/>
+                            <constraint firstItem="BBK-Zk-gat" firstAttribute="top" secondItem="eAO-df-ee6" secondAttribute="bottom" constant="20" id="TeS-ui-MBS"/>
                             <constraint firstItem="eAO-df-ee6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vto-PW-wMn"/>
+                            <constraint firstItem="BBK-Zk-gat" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WvD-Cg-21y"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="cAg-5f-qL3"/>
                             <constraint firstItem="eAO-df-ee6" firstAttribute="top" secondItem="9Hh-Ji-49K" secondAttribute="bottom" constant="10" id="d4t-7G-nHj"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rl9-WP-Dyl"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sMc-zU-OPh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBK-Zk-gat" secondAttribute="bottom" constant="20" id="uWh-LA-CYV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="raP-pP-4MV" id="sM3-Il-0BP"/>
+                        <outlet property="detailTextView" destination="eAO-df-ee6" id="qxR-Wo-8K0"/>
+                        <outlet property="detailTitleLabel" destination="9Hh-Ji-49K" id="nX5-B8-HUp"/>
+                        <outlet property="favoriteButton" destination="BBK-Zk-gat" id="8Fl-9f-u4r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+    </resources>
 </document>
