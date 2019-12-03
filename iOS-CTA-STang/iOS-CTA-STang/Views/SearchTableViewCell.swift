@@ -9,15 +9,44 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
+    //TODO: Style objects
+    
+    lazy var cellImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .yellow
+        return imageView
+    }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
+    }()
+    
+    lazy var detailLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, detailLabel])
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    lazy var favoriteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        return button
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         addsubViews()
         addConstraints()
 
@@ -39,21 +68,5 @@ class SearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    private func addsubViews() {
-        self.contentView.addSubview(titleLabel)
-    }
-    
-    private func addConstraints() {
-        setTitleLabelConstraints()
-    }
-    
-    private func setTitleLabelConstraints() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-    }
-    
+
 }
