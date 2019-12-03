@@ -48,6 +48,9 @@
 		EA4ED77D2396D4F2004B6F2E /* museumItemJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED77A2396D197004B6F2E /* museumItemJSON.json */; };
 		EA4ED77F2396EE11004B6F2E /* SearchListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */; };
 		EA4ED7812396F803004B6F2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7802396F803004B6F2E /* NetworkManager.swift */; };
+		EA4ED7832396F826004B6F2E /* EventAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7822396F826004B6F2E /* EventAPIClient.swift */; };
+		EA4ED7852396F841004B6F2E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7842396F841004B6F2E /* AppError.swift */; };
+		EA4ED7872396F8B0004B6F2E /* MuseumItemAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		EA4ED77A2396D197004B6F2E /* museumItemJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = museumItemJSON.json; sourceTree = "<group>"; };
 		EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+TableView.swift"; sourceTree = "<group>"; };
 		EA4ED7802396F803004B6F2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EA4ED7822396F826004B6F2E /* EventAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIClient.swift; sourceTree = "<group>"; };
+		EA4ED7842396F841004B6F2E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +268,9 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED7802396F803004B6F2E /* NetworkManager.swift */,
+				EA4ED7842396F841004B6F2E /* AppError.swift */,
+				EA4ED7822396F826004B6F2E /* EventAPIClient.swift */,
+				EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -506,10 +515,12 @@
 			files = (
 				EA4ED75D2395A16D004B6F2E /* FavoritesViewController+UI.swift in Sources */,
 				EA4ED74C23956B52004B6F2E /* FavoritesViewController.swift in Sources */,
+				EA4ED7852396F841004B6F2E /* AppError.swift in Sources */,
 				EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */,
 				EA4ED7652395AE29004B6F2E /* SignUpViewController+PickerView.swift in Sources */,
 				EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */,
 				EA4ED74E23956D03004B6F2E /* SearchTableViewCell.swift in Sources */,
+				EA4ED7832396F826004B6F2E /* EventAPIClient.swift in Sources */,
 				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
 				EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,
@@ -523,6 +534,7 @@
 				EA4ED76D2395C719004B6F2E /* ViewController+Alerts.swift in Sources */,
 				EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */,
 				EA4ED77F2396EE11004B6F2E /* SearchListViewController+TableView.swift in Sources */,
+				EA4ED7872396F8B0004B6F2E /* MuseumItemAPIClient.swift in Sources */,
 				EA4ED7612395A487004B6F2E /* AppTabBarViewController.swift in Sources */,
 				EA4ED7632395ABA0004B6F2E /* UserExperience.swift in Sources */,
 				EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */,
