@@ -274,8 +274,7 @@
 			children = (
 				EA4ED7802396F803004B6F2E /* NetworkManager.swift */,
 				EA4ED7842396F841004B6F2E /* AppError.swift */,
-				EA4ED7822396F826004B6F2E /* EventAPIClient.swift */,
-				EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */,
+				EA4ED78D23971A93004B6F2E /* APIClients */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -343,6 +342,15 @@
 				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
 			);
 			path = SearchListViewController;
+			sourceTree = "<group>";
+		};
+		EA4ED78D23971A93004B6F2E /* APIClients */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED7822396F826004B6F2E /* EventAPIClient.swift */,
+				EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */,
+			);
+			path = APIClients;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
