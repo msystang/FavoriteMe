@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
     //TODO: Add cancel button to pop back to LogIn VC
@@ -39,7 +41,7 @@ class SignUpViewController: UIViewController {
     lazy var signUpButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create New Account", for: .normal)
-//        button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
         return button
     }()
     
@@ -93,4 +95,59 @@ class SignUpViewController: UIViewController {
         signUpButton.isEnabled = true
     }
 
+    @objc func trySignUp() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(title: "Error", message: "Please fill out all fields.")
+            return
+        }
+        
+        guard email.isValidEmail else {
+            showAlert(title: "Error", message: "Please enter a valid email")
+            return
+        }
+        
+        guard password.isValidPassword else {
+            showAlert(title: "Error", message: "Please enter a valid password. Passwords must have at least 8 characters.")
+            return
+        }
+        
+        FirebaseAuthService.manager.createNewUser(email: email.lowercased(), password: password) { [weak self] (result) in
+            self?.handleCreateAccountResponse(with: result)
+        }
+    }
+    
+    //MARK: - Private Methods
+    
+    private func handleCreateAccountResponse(with result: Result<User, Error>) {
+            switch result {
+            case .success(let user):
+                let newAppUser = AppUser(from: user, selectedExperience: selectedExperience)
+                FirestoreService.manager.createUser(user: newAppUser) { [weak self] (newResult) in
+                    self?.handleCreatedUserInFirestore(result: newResult)
+                }
+            case .failure(let error):
+                self.showAlert(title: "Error creating user", message: "An error occured while creating new account: \(error)")
+        }
+    }
+    
+    private func handleCreatedUserInFirestore(result: Result<(), Error>) {
+        switch result {
+        case .success:
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+                else {
+                    return
+            }
+            
+            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+                    window.rootViewController = {
+                        let searchVC = AppTabBarViewController()
+                            searchVC.selectedIndex = 0
+                        return searchVC
+                    }()
+            }, completion: nil)
+        case .failure(let error):
+            self.showAlert(title: "Error creating user", message: "An error occured while creating new account \(error)")
+        }
+    }
 }

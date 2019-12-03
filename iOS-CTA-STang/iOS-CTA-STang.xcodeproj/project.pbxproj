@@ -37,6 +37,15 @@
 		EA4ED7692395BAE3004B6F2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED7682395BAE3004B6F2E /* GoogleService-Info.plist */; };
 		EA4ED76D2395C719004B6F2E /* ViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED76C2395C719004B6F2E /* ViewController+Alerts.swift */; };
 		EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */; };
+		EA4ED7712395C924004B6F2E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7702395C924004B6F2E /* FirestoreService.swift */; };
+		EA4ED7732395CB1E004B6F2E /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7722395CB1E004B6F2E /* Favorite.swift */; };
+		EA4ED7752396AEA8004B6F2E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7742396AEA7004B6F2E /* Secrets.swift */; };
+		EA4ED7772396B3C1004B6F2E /* eventJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED7762396B3C1004B6F2E /* eventJSON.json */; };
+		EA4ED7782396BC9B004B6F2E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74023956AB2004B6F2E /* Event.swift */; };
+		EA4ED7792396BCD0004B6F2E /* eventJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED7762396B3C1004B6F2E /* eventJSON.json */; };
+		EA4ED77B2396D197004B6F2E /* museumItemJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED77A2396D197004B6F2E /* museumItemJSON.json */; };
+		EA4ED77C2396D442004B6F2E /* MuseumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74223956AB9004B6F2E /* MuseumItem.swift */; };
+		EA4ED77D2396D4F2004B6F2E /* museumItemJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED77A2396D197004B6F2E /* museumItemJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +97,11 @@
 		EA4ED7682395BAE3004B6F2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA4ED76C2395C719004B6F2E /* ViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alerts.swift"; sourceTree = "<group>"; };
 		EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		EA4ED7702395C924004B6F2E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		EA4ED7722395CB1E004B6F2E /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		EA4ED7742396AEA7004B6F2E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		EA4ED7762396B3C1004B6F2E /* eventJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = eventJSON.json; sourceTree = "<group>"; };
+		EA4ED77A2396D197004B6F2E /* museumItemJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = museumItemJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +175,8 @@
 			children = (
 				EA4ED72D239567AC004B6F2E /* iOS_CTA_STangTests.swift */,
 				EA4ED72F239567AC004B6F2E /* Info.plist */,
+				EA4ED7762396B3C1004B6F2E /* eventJSON.json */,
+				EA4ED77A2396D197004B6F2E /* museumItemJSON.json */,
 			);
 			path = "iOS-CTA-STangTests";
 			sourceTree = "<group>";
@@ -168,10 +184,11 @@
 		EA4ED738239569CC004B6F2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
 				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
 				EA4ED74023956AB2004B6F2E /* Event.swift */,
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
-				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
+				EA4ED7722395CB1E004B6F2E /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED76E2395C7ED004B6F2E /* FirebaseAuthService.swift */,
+				EA4ED7702395C924004B6F2E /* FirestoreService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -222,6 +240,7 @@
 				EA4ED713239567A9004B6F2E /* AppDelegate.swift */,
 				EA4ED715239567A9004B6F2E /* SceneDelegate.swift */,
 				EA4ED71F239567AC004B6F2E /* Assets.xcassets */,
+				EA4ED7742396AEA7004B6F2E /* Secrets.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -390,9 +409,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4ED77D2396D4F2004B6F2E /* museumItemJSON.json in Resources */,
 				EA4ED723239567AC004B6F2E /* LaunchScreen.storyboard in Resources */,
 				EA4ED7692395BAE3004B6F2E /* GoogleService-Info.plist in Resources */,
 				EA4ED720239567AC004B6F2E /* Assets.xcassets in Resources */,
+				EA4ED7792396BCD0004B6F2E /* eventJSON.json in Resources */,
 				EA4ED71B239567AA004B6F2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +422,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4ED77B2396D197004B6F2E /* museumItemJSON.json in Resources */,
+				EA4ED7772396B3C1004B6F2E /* eventJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,14 +509,17 @@
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,
 				EA4ED73F23956A70004B6F2E /* AppUser.swift in Sources */,
 				EA4ED74623956AE9004B6F2E /* LogInViewController.swift in Sources */,
+				EA4ED7752396AEA8004B6F2E /* Secrets.swift in Sources */,
 				EA4ED74323956AB9004B6F2E /* MuseumItem.swift in Sources */,
 				EA4ED74823956AF8004B6F2E /* SignUpViewController.swift in Sources */,
+				EA4ED7712395C924004B6F2E /* FirestoreService.swift in Sources */,
 				EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */,
 				EA4ED76D2395C719004B6F2E /* ViewController+Alerts.swift in Sources */,
 				EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */,
 				EA4ED7612395A487004B6F2E /* AppTabBarViewController.swift in Sources */,
 				EA4ED7632395ABA0004B6F2E /* UserExperience.swift in Sources */,
 				EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */,
+				EA4ED7732395CB1E004B6F2E /* Favorite.swift in Sources */,
 				EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */,
 				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,
 				EA4ED74123956AB2004B6F2E /* Event.swift in Sources */,
@@ -505,6 +531,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4ED7782396BC9B004B6F2E /* Event.swift in Sources */,
+				EA4ED77C2396D442004B6F2E /* MuseumItem.swift in Sources */,
 				EA4ED72E239567AC004B6F2E /* iOS_CTA_STangTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
