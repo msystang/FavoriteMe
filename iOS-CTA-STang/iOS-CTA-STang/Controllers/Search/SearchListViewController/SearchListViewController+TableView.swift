@@ -37,6 +37,23 @@ extension SearchListViewController: UITableViewDataSource {
                 cell.titleLabel.text = event.name
                 cell.detailLabel.text = event.dates.start.dateTime
                 
+                //TODO: load image as own func?
+                let urlStr = event.images[3].url
+                
+                ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                            //TODO: Load default image
+                            cell.imageActivityIndicator.isHidden = true
+                        case .success(let imageFromOnline):
+                            cell.cellImageView.image = imageFromOnline
+                            cell.imageActivityIndicator.isHidden = true
+                        }
+                    }
+                }
+                
             case UserExperience.rijksmuseum:
                 let museumItem = museumItems[indexPath.row]
                 

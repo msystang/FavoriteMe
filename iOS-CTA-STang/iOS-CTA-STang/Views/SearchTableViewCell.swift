@@ -14,6 +14,8 @@ class SearchTableViewCell: UITableViewCell {
     lazy var cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .yellow
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
