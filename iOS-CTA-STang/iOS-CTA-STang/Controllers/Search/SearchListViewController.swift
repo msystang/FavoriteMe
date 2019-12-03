@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchListViewController: UIViewController {
+    //MARK: - UI Objects
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
@@ -19,10 +20,39 @@ class SearchListViewController: UIViewController {
     lazy var searchTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
-        //TODO: Set delegate/Datasource
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
     
+    //MARK: - Internal Methods
+    var currentUser: AppUser!
+    
+    var selectedExperience: UserExperience {
+        switch currentUser.selectedExperience {
+        case "Ticketmaster":
+            return UserExperience.ticketMaster
+        case "Rijksmuseum":
+            return UserExperience.rijksmuseum
+        default:
+            return UserExperience.ticketMaster
+        }
+        
+    }
+    
+    var events = [Event]() {
+        didSet {
+            searchTableView.reloadData()
+        }
+    }
+    
+    var museumItems = [MuseumItem]() {
+        didSet {
+            searchTableView.reloadData()
+        }
+    }
+    
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +60,27 @@ class SearchListViewController: UIViewController {
         
         addSubviews()
         addConstraints()
+        
+        loadUserInfo()
     }
-
-
+    
+    private func loadUserInfo() {
+        let user = FirebaseAuthService.manager.currentUser!
+        FirestoreService.manager.getCurrentUserInfo(user: user) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let appUser):
+                self?.currentUser = appUser
+                self?.loadSearchResults()
+            }
+        }
+    }
+    
+    private func loadSearchResults() {
+        // switch API client
+        // load Data
+    }
+    
 }
 
