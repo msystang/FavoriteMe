@@ -25,9 +25,14 @@ struct MuseumItem: Codable {
     let links: Link
     let title: String
     let principalOrFirstMaker: String
+    let webImage: ItemImage
 
 }
 
 struct Link: Codable {
     let web: String
+}
+
+struct ItemImage: Codable {
+    let url: String
 }
