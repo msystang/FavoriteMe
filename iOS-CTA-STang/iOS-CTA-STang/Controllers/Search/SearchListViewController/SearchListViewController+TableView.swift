@@ -59,6 +59,23 @@ extension SearchListViewController: UITableViewDataSource {
                 
                 cell.titleLabel.text = museumItem.title
                 cell.detailLabel.text = museumItem.principalOrFirstMaker
+                
+                //TODO: load image as own func?
+                let urlStr = museumItem.webImage.url
+                
+                ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                            //TODO: Load default image
+                            cell.imageActivityIndicator.isHidden = true
+                        case .success(let imageFromOnline):
+                            cell.cellImageView.image = imageFromOnline
+                            cell.imageActivityIndicator.isHidden = true
+                        }
+                    }
+                }
             }
         }
         
