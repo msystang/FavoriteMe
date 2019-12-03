@@ -17,6 +17,11 @@ class SearchTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    lazy var imageActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        return activityIndicator
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0

@@ -25,6 +25,7 @@ extension SearchListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         
         cell.layer.backgroundColor = UIColor.clear.cgColor
+        cell.imageActivityIndicator.startAnimating()
         
         if selectedExperience != nil {
             switch selectedExperience! {

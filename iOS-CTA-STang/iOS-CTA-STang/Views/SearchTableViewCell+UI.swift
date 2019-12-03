@@ -13,12 +13,14 @@ extension SearchTableViewCell {
         self.contentView.addSubview(cellImageView)
         self.contentView.addSubview(favoriteButton)
         self.contentView.addSubview(labelStackView)
+        cellImageView.addSubview(imageActivityIndicator)
     }
     
     func addConstraints() {
         setCellImageViewConstraints()
         setFavoriteButtonConstraints()
         setLabelStackViewConstraints()
+        setImageActivityIndicatorConstraints()
         
     }
     
@@ -55,6 +57,13 @@ extension SearchTableViewCell {
         ])
     }
     
-
+    private func setImageActivityIndicatorConstraints() {
+        imageActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imageActivityIndicator.centerYAnchor.constraint(equalTo: cellImageView.centerYAnchor),
+            imageActivityIndicator.centerXAnchor.constraint(equalTo: cellImageView.centerXAnchor)
+        ])
+    }
 
 }
