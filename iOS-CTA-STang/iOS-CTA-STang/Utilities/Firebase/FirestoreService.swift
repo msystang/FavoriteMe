@@ -7,3 +7,63 @@
 //
 
 import Foundation
+import FirebaseFirestore
+
+fileprivate enum FireStoreCollections: String {
+    case users
+    case favorites
+}
+
+class FirestoreService {
+    static let manager = FirestoreService()
+    
+    private let db = Firestore.firestore()
+    
+    //MARK: Users
+    func createUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
+        var fields = user.fieldsDict
+        fields["dateCreated"] = Date()
+        db.collection(FireStoreCollections.users.rawValue).document(user.uid).setData(fields) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+            }
+            completion(.success(()))
+        }
+    }
+    
+    //MARK: Favorites
+    func storeFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
+        var fields = favorite.fieldsDict
+        fields["dateCreated"] = Date()
+        db.collection(FireStoreCollections.favorites.rawValue).addDocument(data: fields) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+    
+    func getFavorites(forUserID: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
+        db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let favorites = snapshot?.documents.compactMap({ (snapshot) -> Favorite? in
+                    let favoriteID = snapshot.documentID
+                    let favorite = Favorite(from: snapshot.data(), id: favoriteID)
+                    return favorite
+                })
+                completion(.success(favorites ?? []))
+            }
+        }
+        
+    }
+    
+    func removeFavorite() {
+        //TODO: Create removeFavorite func by updating isFavorite property
+    }
+    
+    private init () {}
+}
