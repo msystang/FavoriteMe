@@ -50,7 +50,7 @@ struct EventDateWrapper: Codable {
 }
 
 struct EventDate: Codable {
-    let dateTime: String
+    let dateTime: String?
     
     var formattedDate: String {
         let dateFormatterGet = DateFormatter()
@@ -59,7 +59,7 @@ struct EventDate: Codable {
         let dateFormatterSet = DateFormatter()
         dateFormatterSet.dateFormat = "MMM d yyyy, h:mm a"
         
-        guard let unformattedDate = dateFormatterGet.date(from: dateTime) else { return "N/A" }
+        guard let unformattedDate = dateFormatterGet.date(from: dateTime ?? "") else { return "N/A" }
         return dateFormatterSet.string(from: unformattedDate)
     }
 }
