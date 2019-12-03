@@ -47,6 +47,7 @@
 		EA4ED77C2396D442004B6F2E /* MuseumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED74223956AB9004B6F2E /* MuseumItem.swift */; };
 		EA4ED77D2396D4F2004B6F2E /* museumItemJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED77A2396D197004B6F2E /* museumItemJSON.json */; };
 		EA4ED77F2396EE11004B6F2E /* SearchListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */; };
+		EA4ED7812396F803004B6F2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7802396F803004B6F2E /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		EA4ED7762396B3C1004B6F2E /* eventJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = eventJSON.json; sourceTree = "<group>"; };
 		EA4ED77A2396D197004B6F2E /* museumItemJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = museumItemJSON.json; sourceTree = "<group>"; };
 		EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+TableView.swift"; sourceTree = "<group>"; };
+		EA4ED7802396F803004B6F2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 		EA4ED74F23956DD2004B6F2E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED7802396F803004B6F2E /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				EA4ED75423957771004B6F2E /* UIDesign.swift in Sources */,
 				EA4ED7732395CB1E004B6F2E /* Favorite.swift in Sources */,
 				EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */,
+				EA4ED7812396F803004B6F2E /* NetworkManager.swift in Sources */,
 				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,
 				EA4ED74123956AB2004B6F2E /* Event.swift in Sources */,
 				EA4ED716239567A9004B6F2E /* SceneDelegate.swift in Sources */,
