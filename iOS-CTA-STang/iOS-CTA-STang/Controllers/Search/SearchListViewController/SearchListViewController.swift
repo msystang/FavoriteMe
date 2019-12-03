@@ -99,6 +99,7 @@ class SearchListViewController: UIViewController {
         }
     }
     
+    //TODO: Load default results before searchString is used
     private func loadEvents() {
         let urlStr = EventAPIClient.getSearchResultsURLStr(from: searchString ?? "")
         

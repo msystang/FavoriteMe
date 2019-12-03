@@ -306,10 +306,7 @@
 		EA4ED75F2395A40E004B6F2E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				EA4ED717239567A9004B6F2E /* SearchListViewController.swift */,
-				EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */,
-				EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */,
-				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
+				EA4ED78A239709FD004B6F2E /* SearchListViewController */,
 				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
 			);
 			path = Search;
@@ -332,6 +329,17 @@
 				EA4ED7502395750E004B6F2E /* LogInViewController+UI.swift */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		EA4ED78A239709FD004B6F2E /* SearchListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED717239567A9004B6F2E /* SearchListViewController.swift */,
+				EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */,
+				EA4ED77E2396EE11004B6F2E /* SearchListViewController+TableView.swift */,
+				EA4ED75723958515004B6F2E /* SearchListViewController+UI.swift */,
+			);
+			path = SearchListViewController;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
