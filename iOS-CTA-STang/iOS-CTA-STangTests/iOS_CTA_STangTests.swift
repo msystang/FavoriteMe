@@ -46,7 +46,37 @@ class iOS_CTA_STangTests: XCTestCase {
         }
         
         // Assert
-        XCTAssertTrue(events.count == 20, "Was expecting 20 best sellers, but found \(events.count)")
+        XCTAssertTrue(events.count == 20, "Was expecting 20 events, but found \(events.count)")
+    }
+    
+    // MARK: - MuseumItem Model
+    func testMuseumItemModelDecode() {
+        guard let jsonPath = Bundle.main.path(forResource: "museumItemJSON", ofType: "json") else {
+            XCTFail("Could not find museumItemJSON file")
+            return
+        }
+        
+        let jsonURL = URL(fileURLWithPath: jsonPath)
+        var museumItemJSONData = Data()
+        
+        do {
+            museumItemJSONData = try Data(contentsOf: jsonURL)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Act
+        var museumItems = [MuseumItem]()
+        
+        do {
+            let museumItemInfo = try RijksmuseumResponse.decodeMuseumItemsFromData(from: museumItemJSONData)
+            museumItems = museumItemInfo
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Assert
+        XCTAssertTrue(museumItems.count == 20, "Was expecting 20 museum items, but found \(museumItems.count)")
     }
 
 }
