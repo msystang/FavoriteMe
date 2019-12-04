@@ -56,6 +56,7 @@
 		EA4ED78F23971AB7004B6F2E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */; };
 		EA4ED79223981545004B6F2E /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79123981545004B6F2E /* Favoritable.swift */; };
 		EA4ED79523983353004B6F2E /* museumItemDetailJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED79423983353004B6F2E /* museumItemDetailJSON.json */; };
+		EA4ED79723983487004B6F2E /* MuseumItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		EA4ED79123981545004B6F2E /* Favoritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favoritable.swift; sourceTree = "<group>"; };
 		EA4ED79423983353004B6F2E /* museumItemDetailJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = museumItemDetailJSON.json; sourceTree = "<group>"; };
+		EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
 				EA4ED74023956AB2004B6F2E /* Event.swift */,
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
+				EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */,
 				EA4ED7722395CB1E004B6F2E /* Favorite.swift */,
 			);
 			path = Models;
@@ -592,6 +595,7 @@
 				EA4ED7512395750E004B6F2E /* LogInViewController+UI.swift in Sources */,
 				EA4ED7812396F803004B6F2E /* NetworkManager.swift in Sources */,
 				EA4ED74A23956B1D004B6F2E /* DetailsViewController.swift in Sources */,
+				EA4ED79723983487004B6F2E /* MuseumItemDetail.swift in Sources */,
 				EA4ED74123956AB2004B6F2E /* Event.swift in Sources */,
 				EA4ED716239567A9004B6F2E /* SceneDelegate.swift in Sources */,
 				EA4ED78C239711AF004B6F2E /* SearchTableViewCell+UI.swift in Sources */,
