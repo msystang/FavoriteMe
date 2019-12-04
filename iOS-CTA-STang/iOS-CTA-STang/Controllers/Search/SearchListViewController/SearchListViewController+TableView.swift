@@ -97,6 +97,15 @@ extension SearchListViewController: UITableViewDelegate {
         
         detailsVC.selectedExperience = selectedExperience
         
+        if selectedExperience != nil {
+            switch selectedExperience! {
+            case UserExperience.ticketMaster:
+                detailsVC.event = events[indexPath.row]
+            case UserExperience.rijksmuseum:
+                detailsVC.museumItem = museumItems[indexPath.row]
+            }
+        }
+        
         self.present(detailsVC, animated: true, completion: nil)
         
     }

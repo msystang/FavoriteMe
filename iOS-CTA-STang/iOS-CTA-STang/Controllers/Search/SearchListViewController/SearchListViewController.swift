@@ -63,6 +63,10 @@ class SearchListViewController: UIViewController {
         addSubviews()
         addConstraints()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadUserInfo()
     }
     
@@ -74,6 +78,23 @@ class SearchListViewController: UIViewController {
                 print(error)
             case .success(let appUser):
                 self?.currentUser = appUser
+                self?.loadVCTitle()
+                self?.setPlaceHolderText()
+            }
+        }
+    }
+    
+    private func loadVCTitle() {
+        self.title = currentUser.selectedExperience
+    }
+    
+    private func setPlaceHolderText() {
+        if selectedExperience != nil {
+            switch selectedExperience! {
+            case UserExperience.ticketMaster:
+                searchBar.placeholder = "Search for events"
+            case UserExperience.rijksmuseum:
+                searchBar.placeholder = "Search for art pieces"
             }
         }
     }
