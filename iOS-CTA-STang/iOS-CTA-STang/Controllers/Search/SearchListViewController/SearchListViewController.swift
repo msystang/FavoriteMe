@@ -27,9 +27,8 @@ class SearchListViewController: UIViewController {
     }()
     
     lazy var signOutButton: UIBarButtonItem = {
-        let barButton = UIBarButtonItem()
-        barButton.image = UIImage(systemName: "person.crop.circle.fill.badge.xmark")
-        //TODO: Add target action
+        let signOutImage: UIImage? = UIImage(systemName: "person.crop.circle.fill.badge.xmark")
+        let barButton = UIBarButtonItem(image: signOutImage, style: .plain, target: self, action: #selector(signOutButtonPressed))
         return barButton
     }()
     
@@ -71,6 +70,21 @@ class SearchListViewController: UIViewController {
         loadUserInfo()
     }
     
+    
+    //MARK: - Objc Functions
+    @objc func signOutButtonPressed() {
+        FirebaseAuthService.manager.signOutUser { (result) in
+            switch result {
+            case .failure(let error):
+                print("Could not sign out:\(error)")
+            case .success(()):
+                print("Signed out")
+                self.goToLogInVC()
+            }
+        }
+    }
+    
+    //MARK: - Private Methods
     private func loadUserInfo() {
         let user = FirebaseAuthService.manager.currentUser!
         FirestoreService.manager.getCurrentUserInfo(user: user) { [weak self] (result) in
@@ -153,5 +167,16 @@ class SearchListViewController: UIViewController {
         }
         
     }
+    
+    private func goToLogInVC() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else { return }
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
+                window.rootViewController = LogInViewController()
+        })
+    }
+
 }
 
