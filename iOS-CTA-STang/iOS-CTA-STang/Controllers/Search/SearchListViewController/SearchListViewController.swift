@@ -11,6 +11,7 @@ import UIKit
 class SearchListViewController: UIViewController {
     //MARK: - UI Objects
     lazy var searchBar: UISearchBar = {
+        //TODO: Change color of cursor and cancel button to brown and add in UIDesign as style
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
         searchBar.searchTextField.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
@@ -58,15 +59,10 @@ class SearchListViewController: UIViewController {
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         
-        //TODO: Add to functions
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         self.navigationItem.rightBarButtonItem = signOutButton
-    
-        let textAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
+        styleObjects()
         
         addSubviews()
         addConstraints()
