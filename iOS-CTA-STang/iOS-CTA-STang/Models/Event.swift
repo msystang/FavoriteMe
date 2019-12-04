@@ -25,18 +25,79 @@ struct EventWrapper: Codable {
     let events: [Event]
 }
 
-struct Event: Codable {
-    let name: String
+struct Event: Codable, Favoritable {
+    private let name: String
     let id: String
-    let url: String
-    let images: [EventImage]
-    let dates: EventDateWrapper
-    let priceRanges: [EventPrice]?
-    let venueInfo: EventVenueWrapper
+    private let url: String
+    private let images: [EventImage]
+    private let dates: EventDateWrapper
+    private let priceRanges: [EventPrice]?
     
-    private enum CodingKeys: String, CodingKey {
-        case name, id, url, images, dates, priceRanges
-        case venueInfo = "_embedded"
+    private var formattedDate: String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+        let dateFormatterSet = DateFormatter()
+        dateFormatterSet.dateFormat = "MMM d yyyy, h:mm a"
+        
+        guard let unformattedDate = dateFormatterGet.date(from: self.dates.start.dateTime ?? "") else { return "No Date Posted" }
+        return dateFormatterSet.string(from: unformattedDate)
+    }
+    
+    private var priceRange: String {
+        guard let priceRanges = priceRanges,
+        let minPrice = priceRanges[0].min,
+        let maxPrice = priceRanges[0].max else { return "No Price Posted" }
+        
+        let minFormatted = String(format: "%.2f", minPrice)
+        let maxFormatted = String(format: "%.2f", maxPrice)
+        return "$\(minFormatted) - $\(maxFormatted)"
+    }
+    
+    //Protocol Properties
+    var photoUrl: String {
+        return self.images[3].url
+    }
+    
+    var isEvent: Bool? {
+        return true
+    }
+    
+    var eventName: String? {
+        return self.name
+    }
+    
+    var eventTimeDate: String? {
+        return self.formattedDate
+    }
+    
+    var eventPrice: String? {
+        //TODO: Create computed property for price range
+        return self.priceRange
+    }
+    
+    var eventLink: String? {
+        return self.url
+    }
+    
+    internal var isMuseumItem: Bool? {
+        return false
+    }
+    
+    internal var itemName: String? {
+        return nil
+    }
+    
+    internal var itemDescription: String? {
+        return nil
+    }
+    
+    internal var itemDateCreated: String? {
+        return nil
+    }
+    
+    internal var itemPlaceProduced: String? {
+        return nil
     }
 }
 
@@ -51,28 +112,9 @@ struct EventDateWrapper: Codable {
 
 struct EventDate: Codable {
     let dateTime: String?
-    
-    var formattedDate: String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-
-        let dateFormatterSet = DateFormatter()
-        dateFormatterSet.dateFormat = "MMM d yyyy, h:mm a"
-        
-        guard let unformattedDate = dateFormatterGet.date(from: dateTime ?? "") else { return "N/A" }
-        return dateFormatterSet.string(from: unformattedDate)
-    }
 }
 
 struct EventPrice: Codable {
     let min: Double?
     let max: Double?
-}
-struct EventVenueWrapper: Codable {
-    let venues: [EventVenue]
-}
-
-struct EventVenue: Codable {
-    let name: String
-    
 }
