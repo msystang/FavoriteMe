@@ -51,21 +51,14 @@ extension SearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+        guard let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         
         detailsVC.selectedExperience = selectedExperience
-//        
-//        if selectedExperience != nil {
-//            switch selectedExperience! {
-//            case UserExperience.ticketMaster:
-//                detailsVC.event = events[indexPath.row]
-//            case UserExperience.rijksmuseum:
-//                detailsVC.museumItem = museumItems[indexPath.row]
-//            }
-//        }
-        
+        detailsVC.favoritableObject = favoritableObjects[indexPath.row]
+        detailsVC.detailImage = cell.cellImageView.image
+
         self.present(detailsVC, animated: true, completion: nil)
         
     }

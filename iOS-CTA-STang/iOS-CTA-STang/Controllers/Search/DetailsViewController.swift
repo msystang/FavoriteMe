@@ -22,14 +22,19 @@ class DetailsViewController: UIViewController {
     //MARK: - Internal Properties
     var selectedExperience: UserExperience!
 
-    //TODO: Refactor to pass over one Favoritable protocol property 
-    var event: Event?
-    var museumItem: MuseumItem?
+    //TODO: Refactor to pass over one Favoritable protocol property
+    var favoritableObject: Favoritable!
+    var detailImage: UIImage!
     
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailImageView.image = detailImage
+        detailTitleLabel.text = favoritableObject.name
+        detailTextView.text = favoritableObject.details
+        
+        //TODO: Switch based on event or museumItem for more details in textView
     }
     
     override func viewDidAppear(_ animated: Bool) {
