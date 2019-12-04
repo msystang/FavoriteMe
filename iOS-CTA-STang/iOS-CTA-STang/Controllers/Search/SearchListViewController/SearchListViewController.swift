@@ -92,7 +92,7 @@ class SearchListViewController: UIViewController {
         if selectedExperience != nil {
             switch selectedExperience! {
             case UserExperience.ticketMaster:
-                searchBar.placeholder = "Search for events in New York"
+                searchBar.placeholder = "Enter a city to see events"
             case UserExperience.rijksmuseum:
                 searchBar.placeholder = "Search for art pieces"
             }

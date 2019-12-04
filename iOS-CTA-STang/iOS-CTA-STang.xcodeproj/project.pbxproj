@@ -54,6 +54,7 @@
 		EA4ED789239700D1004B6F2E /* SearchListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */; };
 		EA4ED78C239711AF004B6F2E /* SearchTableViewCell+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */; };
 		EA4ED78F23971AB7004B6F2E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */; };
+		EA4ED79223981545004B6F2E /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79123981545004B6F2E /* Favoritable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		EA4ED788239700D1004B6F2E /* SearchListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTableViewCell+UI.swift"; sourceTree = "<group>"; };
 		EA4ED78E23971AB7004B6F2E /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		EA4ED79123981545004B6F2E /* Favoritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favoritable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
 				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
 				EA4ED7722395CB1E004B6F2E /* Favorite.swift */,
+				EA4ED79123981545004B6F2E /* Favoritable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				EA4ED74E23956D03004B6F2E /* SearchTableViewCell.swift in Sources */,
 				EA4ED7832396F826004B6F2E /* EventAPIClient.swift in Sources */,
 				EA4ED718239567AA004B6F2E /* SearchListViewController.swift in Sources */,
+				EA4ED79223981545004B6F2E /* Favoritable.swift in Sources */,
 				EA4ED76F2395C7ED004B6F2E /* FirebaseAuthService.swift in Sources */,
 				EA4ED789239700D1004B6F2E /* SearchListViewController+SearchBar.swift in Sources */,
 				EA4ED714239567A9004B6F2E /* AppDelegate.swift in Sources */,

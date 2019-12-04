@@ -17,7 +17,9 @@ class EventAPIClient {
     // MARK: - Instance Methods
     
     static func getSearchResultsURLStr(from searchString: String) -> String {
-        return "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=\(Secrets.ticketmasterAPIKey)&keyword=\(searchString)&&city=New%20York"
+        let formattedSearchString = searchString.replacingOccurrences(of: " ", with: "%20")
+        
+        return "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=\(Secrets.ticketmasterAPIKey)&city=\(formattedSearchString)"
     }
     
     func getEvent(urlStr: String, completionHandler: @escaping (Result<[Event], AppError>) -> ())  {
