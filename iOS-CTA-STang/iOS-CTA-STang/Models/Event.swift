@@ -38,7 +38,7 @@ struct Event: Codable, Favoritable {
     let id: String
     
     //MARK: - Favoritable Properties
-    var photoUrl: String {
+    var photoUrl: String? {
         return self.images[3].url
     }
     

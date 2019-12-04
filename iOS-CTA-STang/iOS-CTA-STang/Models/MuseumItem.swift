@@ -27,15 +27,18 @@ struct MuseumItem: Codable, Favoritable {
     private let objectNumber: String
     let principalOrFirstMaker: String
     let productionPlaces: [String]
-    private let webImage: ItemImage
+    private let webImage: ItemImage?
     
     //MARK: - Favoritable Properties
     var id: String {
         return self.objectNumber
     }
     
-    var photoUrl: String {
-        return self.webImage.url
+    var photoUrl: String? {
+        if let webImage = webImage {
+            return webImage.url
+        }
+        return "No photo url"
     }
     
     var name: String {
@@ -43,7 +46,10 @@ struct MuseumItem: Codable, Favoritable {
     }
     
     var details: String {
-        return self.productionPlaces[0]
+        if productionPlaces.count > 1 {
+            return self.productionPlaces[0]
+        }
+        return "Place of production unknown"
     }
     
     var isEvent: Bool? {

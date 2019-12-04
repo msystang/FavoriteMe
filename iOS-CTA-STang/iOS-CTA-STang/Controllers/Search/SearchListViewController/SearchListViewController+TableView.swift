@@ -24,19 +24,22 @@ extension SearchListViewController: UITableViewDataSource {
         cell.titleLabel.text = favoritableObject.name
         cell.detailLabel.text = favoritableObject.details
         
-        let urlStr = favoritableObject.photoUrl
-        ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    print(error)
-                    //TODO: Load default image
-                    cell.imageActivityIndicator.isHidden = true
-                case .success(let imageFromOnline):
-                    cell.cellImageView.image = imageFromOnline
-                    cell.imageActivityIndicator.isHidden = true
+        if let urlStr = favoritableObject.photoUrl {
+            ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                        //TODO: Load default image
+                        cell.imageActivityIndicator.isHidden = true
+                    case .success(let imageFromOnline):
+                        cell.cellImageView.image = imageFromOnline
+                        cell.imageActivityIndicator.isHidden = true
+                    }
                 }
             }
+        } else {
+            //TODO: add default img
         }
         
         return cell

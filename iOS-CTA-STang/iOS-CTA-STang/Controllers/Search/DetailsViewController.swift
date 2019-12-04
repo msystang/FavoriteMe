@@ -35,6 +35,7 @@ class DetailsViewController: UIViewController {
         detailTextView.text = favoritableObject.details
         
         //TODO: Switch based on event or museumItem for more details in textView
+        //TODO: Set noOfLines for label to 0
     }
     
     override func viewDidAppear(_ animated: Bool) {

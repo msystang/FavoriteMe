@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Favoritable {
     var id: String { get }
-    var photoUrl: String { get }
+    var photoUrl: String? { get }
     var name: String { get }
     var details: String { get } // location for MuseumItem, date for Event
     
