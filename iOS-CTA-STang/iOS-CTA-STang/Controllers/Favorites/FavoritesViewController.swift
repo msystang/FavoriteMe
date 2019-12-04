@@ -17,6 +17,9 @@ class FavoritesViewController: UIViewController {
         return tableView
     }()
     
+    let unfavoritedButtonImage: UIImage? = UIImage(systemName: "heart")
+    let favoritedButtonImage: UIImage? = UIImage(systemName: "heart.fill")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
