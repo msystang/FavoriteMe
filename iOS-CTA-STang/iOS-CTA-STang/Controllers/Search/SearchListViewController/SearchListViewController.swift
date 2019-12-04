@@ -26,6 +26,13 @@ class SearchListViewController: UIViewController {
         return tableView
     }()
     
+    lazy var signOutButton: UIBarButtonItem = {
+        let barButton = UIBarButtonItem()
+        barButton.image = UIImage(systemName: "person.crop.circle.fill.badge.xmark")
+        //TODO: Add target action
+        return barButton
+    }()
+    
     //MARK: - Internal Methods
     var currentUser: AppUser! {
         didSet {
@@ -52,6 +59,7 @@ class SearchListViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        navigationItem.rightBarButtonItem = signOutButton
         
         addSubviews()
         addConstraints()

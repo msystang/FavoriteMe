@@ -17,6 +17,13 @@ class FavoritesViewController: UIViewController {
         return tableView
     }()
     
+    lazy var signOutButton: UIBarButtonItem = {
+        let barButton = UIBarButtonItem()
+        barButton.image = UIImage(systemName: "person.crop.circle.fill.badge.xmark")
+        //TODO: Add target action
+        return barButton
+    }()
+    
     let unfavoritedButtonImage: UIImage? = UIImage(systemName: "heart")
     let favoritedButtonImage: UIImage? = UIImage(systemName: "heart.fill")
     
@@ -24,6 +31,9 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        
+        //TODO: Set Title
+        navigationItem.rightBarButtonItem = signOutButton
         
         addSubviews()
         addConstraints()
