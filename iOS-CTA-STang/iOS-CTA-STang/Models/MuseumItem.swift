@@ -21,13 +21,46 @@ struct RijksmuseumResponse: Codable {
     }
 }
 
-struct MuseumItem: Codable {
-    let links: Link
-    let title: String
-    let objectNumber: String
+struct MuseumItem: Codable, Favoritable {
+    //MARK: - Codable Properties
+    private let longTitle: String
+    private let objectNumber: String
     let principalOrFirstMaker: String
-    let webImage: ItemImage
-
+    let productionPlaces: [String]
+    private let webImage: ItemImage
+    
+    //MARK: - Favoritable Properties
+    var id: String {
+        return self.objectNumber
+    }
+    
+    var photoUrl: String {
+        return self.webImage.url
+    }
+    
+    var name: String {
+        return self.longTitle
+    }
+    
+    var details: String {
+        return self.productionPlaces[0]
+    }
+    
+    var isEvent: Bool? {
+        return false
+    }
+    
+    var eventPrice: String? {
+        return nil
+    }
+    
+    var eventLink: String? {
+        return nil
+    }
+    
+    var isMuseumItem: Bool? {
+        return true
+    }
 }
 
 struct Link: Codable {

@@ -26,6 +26,7 @@ struct EventWrapper: Codable {
 }
 
 struct Event: Codable, Favoritable {
+    
     //MARK: - Codable Properties
     private let url: String
     private let images: [EventImage]
@@ -42,15 +43,15 @@ struct Event: Codable, Favoritable {
     }
     
     var details: String {
-        return self.priceRange
+        return self.formattedDate
     }
     
     var isEvent: Bool? {
         return true
     }
     
-    var eventTimeDate: String? {
-        return self.formattedDate
+    var eventPrice: String? {
+        return self.priceRange
     }
     
     var eventLink: String? {
@@ -58,14 +59,6 @@ struct Event: Codable, Favoritable {
     }
     
     var isMuseumItem: Bool? {
-        return nil
-    }
-    
-    var itemDescription: String? {
-        return nil
-    }
-    
-    var itemPlaceProduced: String? {
         return nil
     }
     

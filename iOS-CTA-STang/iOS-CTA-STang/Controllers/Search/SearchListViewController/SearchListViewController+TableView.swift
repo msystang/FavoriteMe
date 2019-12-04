@@ -57,11 +57,11 @@ extension SearchListViewController: UITableViewDataSource {
             case UserExperience.rijksmuseum:
                 let museumItem = museumItems[indexPath.row]
                 
-                cell.titleLabel.text = museumItem.title
-                cell.detailLabel.text = museumItem.principalOrFirstMaker
+                cell.titleLabel.text = museumItem.name
+                cell.detailLabel.text = museumItem.details
                 
                 //TODO: load image as own func?
-                let urlStr = museumItem.webImage.url
+                let urlStr = museumItem.photoUrl
                 
                 ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                     DispatchQueue.main.async {
