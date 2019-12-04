@@ -30,11 +30,29 @@ struct UIDesign {
         button.showsTouchWhenHighlighted = true
     }
     
-    static func styleButtonPressed(_ button: UIButton) {
+    //TODO: Put this to use for login/create account
+    static func styleButtonInactive(_ button: UIButton) {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 25.0
         button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
         button.tintColor = UIColor.black
     }
+    
+    static func styleNameLabel(_ label: UILabel) {
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .left
+        label.textColor = .white
+        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+    }
+    
+    static func styleDetailLabel(_ label: UILabel) {
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .left
+        label.textColor = .white
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+    }
+    
 }

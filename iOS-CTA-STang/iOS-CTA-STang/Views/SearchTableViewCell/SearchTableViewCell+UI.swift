@@ -9,6 +9,11 @@
 import UIKit
 
 extension SearchTableViewCell {
+    func styleObjects() {
+        UIDesign.styleNameLabel(titleLabel)
+        UIDesign.styleDetailLabel(detailLabel)
+    }
+    
     func addsubViews() {
         self.contentView.addSubview(cellImageView)
         self.contentView.addSubview(favoriteButton)
@@ -48,12 +53,16 @@ extension SearchTableViewCell {
     
     private func setLabelStackViewConstraints() {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             labelStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             labelStackView.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 5),
             labelStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            labelStackView.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -10)
+            labelStackView.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -10),
+            titleLabel.leadingAnchor.constraint(equalTo: labelStackView.leadingAnchor),
+            detailLabel.leadingAnchor.constraint(equalTo: labelStackView.leadingAnchor)
         ])
     }
     

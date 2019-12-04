@@ -13,7 +13,7 @@ class SearchTableViewCell: UITableViewCell {
     
     lazy var cellImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .clear
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -26,15 +26,11 @@ class SearchTableViewCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
     
     lazy var detailLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
     
@@ -55,6 +51,7 @@ class SearchTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        styleObjects()
         addsubViews()
         addConstraints()
 
