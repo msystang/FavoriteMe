@@ -35,10 +35,10 @@ extension SearchListViewController: UITableViewDataSource {
                 
                 //TODO: Use formatted Date
                 cell.titleLabel.text = event.name
-                cell.detailLabel.text = event.dates.start.formattedDate
+                cell.detailLabel.text = event.details
                 
                 //TODO: load image as own func?
-                let urlStr = event.images[3].url
+                let urlStr = event.photoUrl
                 
                 ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                     DispatchQueue.main.async {
