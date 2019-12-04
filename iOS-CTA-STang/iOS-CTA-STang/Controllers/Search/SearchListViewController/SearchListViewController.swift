@@ -35,22 +35,15 @@ class SearchListViewController: UIViewController {
     
     var selectedExperience: UserExperience? = nil
     
-    //TODO: Refactor to set Events and MuseumItem to Favoritable protocol and replace switches?
-    var events = [Event]() {
-        didSet {
-            searchTableView.reloadData()
-        }
-    }
-    
-    var museumItems = [MuseumItem]() {
-        didSet {
-            searchTableView.reloadData()
-        }
-    }
-    
     var searchString: String? = nil {
         didSet {
             determineUserExperience()
+        }
+    }
+    
+    var favoritableObjects = [Favoritable]() {
+        didSet{
+            searchTableView.reloadData()
         }
     }
     
@@ -121,7 +114,7 @@ class SearchListViewController: UIViewController {
         }
     }
     
-    //TODO: Load default results before searchString is used
+    //TODO: Load default results before searchString is used?
     private func loadEvents() {
         let urlStr = EventAPIClient.getSearchResultsURLStr(from: searchString ?? "")
         
@@ -131,7 +124,7 @@ class SearchListViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let eventsFromOnline):
-                    self?.events = eventsFromOnline
+                    self?.favoritableObjects = eventsFromOnline as [Favoritable]
                 }
             }
         }
@@ -146,7 +139,7 @@ class SearchListViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let museumItemsFromOnline):
-                    self?.museumItems = museumItemsFromOnline
+                    self?.favoritableObjects = museumItemsFromOnline as [Favoritable]
                 }
             }
         }

@@ -10,15 +10,7 @@ import UIKit
 
 extension SearchListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedExperience != nil {
-            switch selectedExperience! {
-            case UserExperience.ticketMaster:
-                return events.count
-            case UserExperience.rijksmuseum:
-                return museumItems.count
-            }
-        }
-        return 0
+        return favoritableObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,54 +19,22 @@ extension SearchListViewController: UITableViewDataSource {
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.imageActivityIndicator.startAnimating()
         
-        if selectedExperience != nil {
-            switch selectedExperience! {
-                
-            case UserExperience.ticketMaster:
-                let event = events[indexPath.row]
-                
-                //TODO: Use formatted Date
-                cell.titleLabel.text = event.name
-                cell.detailLabel.text = event.details
-                
-                //TODO: load image as own func?
-                let urlStr = event.photoUrl
-                
-                ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .failure(let error):
-                            print(error)
-                            //TODO: Load default image
-                            cell.imageActivityIndicator.isHidden = true
-                        case .success(let imageFromOnline):
-                            cell.cellImageView.image = imageFromOnline
-                            cell.imageActivityIndicator.isHidden = true
-                        }
-                    }
-                }
-                
-            case UserExperience.rijksmuseum:
-                let museumItem = museumItems[indexPath.row]
-                
-                cell.titleLabel.text = museumItem.name
-                cell.detailLabel.text = museumItem.details
-                
-                //TODO: load image as own func?
-                let urlStr = museumItem.photoUrl
-                
-                ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .failure(let error):
-                            print(error)
-                            //TODO: Load default image
-                            cell.imageActivityIndicator.isHidden = true
-                        case .success(let imageFromOnline):
-                            cell.cellImageView.image = imageFromOnline
-                            cell.imageActivityIndicator.isHidden = true
-                        }
-                    }
+        let favoritableObject = favoritableObjects[indexPath.row]
+        
+        cell.titleLabel.text = favoritableObject.name
+        cell.detailLabel.text = favoritableObject.details
+        
+        let urlStr = favoritableObject.photoUrl
+        ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    //TODO: Load default image
+                    cell.imageActivityIndicator.isHidden = true
+                case .success(let imageFromOnline):
+                    cell.cellImageView.image = imageFromOnline
+                    cell.imageActivityIndicator.isHidden = true
                 }
             }
         }
@@ -96,15 +56,15 @@ extension SearchListViewController: UITableViewDelegate {
         let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         
         detailsVC.selectedExperience = selectedExperience
-        
-        if selectedExperience != nil {
-            switch selectedExperience! {
-            case UserExperience.ticketMaster:
-                detailsVC.event = events[indexPath.row]
-            case UserExperience.rijksmuseum:
-                detailsVC.museumItem = museumItems[indexPath.row]
-            }
-        }
+//        
+//        if selectedExperience != nil {
+//            switch selectedExperience! {
+//            case UserExperience.ticketMaster:
+//                detailsVC.event = events[indexPath.row]
+//            case UserExperience.rijksmuseum:
+//                detailsVC.museumItem = museumItems[indexPath.row]
+//            }
+//        }
         
         self.present(detailsVC, animated: true, completion: nil)
         
