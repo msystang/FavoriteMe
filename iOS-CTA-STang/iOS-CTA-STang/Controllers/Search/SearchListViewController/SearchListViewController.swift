@@ -56,9 +56,14 @@ class SearchListViewController: UIViewController {
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         
-        view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
-        navigationItem.rightBarButtonItem = signOutButton
+        //TODO: Add to functions
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        self.navigationItem.rightBarButtonItem = signOutButton
+    
+        let textAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         addSubviews()
         addConstraints()
