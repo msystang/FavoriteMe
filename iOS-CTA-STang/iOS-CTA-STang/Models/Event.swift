@@ -26,13 +26,50 @@ struct EventWrapper: Codable {
 }
 
 struct Event: Codable, Favoritable {
-    private let name: String
-    let id: String
+    //MARK: - Codable Properties
     private let url: String
     private let images: [EventImage]
     private let dates: EventDateWrapper
     private let priceRanges: [EventPrice]?
     
+    //MARK: - Codable and Favoritable Properties
+    let name: String
+    let id: String
+    
+    //MARK: - Favoritable Properties
+    var photoUrl: String {
+        return self.images[3].url
+    }
+    
+    var details: String {
+        return self.priceRange
+    }
+    
+    var isEvent: Bool? {
+        return true
+    }
+    
+    var eventTimeDate: String? {
+        return self.formattedDate
+    }
+    
+    var eventLink: String? {
+        return self.url
+    }
+    
+    var isMuseumItem: Bool? {
+        return nil
+    }
+    
+    var itemDescription: String? {
+        return nil
+    }
+    
+    var itemPlaceProduced: String? {
+        return nil
+    }
+    
+    //MARK: - Computed Properties
     private var formattedDate: String {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -54,51 +91,6 @@ struct Event: Codable, Favoritable {
         return "$\(minFormatted) - $\(maxFormatted)"
     }
     
-    //Protocol Properties
-    var photoUrl: String {
-        return self.images[3].url
-    }
-    
-    var isEvent: Bool? {
-        return true
-    }
-    
-    var eventName: String? {
-        return self.name
-    }
-    
-    var eventTimeDate: String? {
-        return self.formattedDate
-    }
-    
-    var eventPrice: String? {
-        //TODO: Create computed property for price range
-        return self.priceRange
-    }
-    
-    var eventLink: String? {
-        return self.url
-    }
-    
-    internal var isMuseumItem: Bool? {
-        return false
-    }
-    
-    internal var itemName: String? {
-        return nil
-    }
-    
-    internal var itemDescription: String? {
-        return nil
-    }
-    
-    internal var itemDateCreated: String? {
-        return nil
-    }
-    
-    internal var itemPlaceProduced: String? {
-        return nil
-    }
 }
 
 //Use 4th index
