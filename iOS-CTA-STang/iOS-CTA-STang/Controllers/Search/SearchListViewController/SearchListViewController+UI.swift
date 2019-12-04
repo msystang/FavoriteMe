@@ -10,7 +10,7 @@ import UIKit
 
 extension SearchListViewController {
     func styleObjects() {
-        self.view.backgroundColor = #colorLiteral(red: 0.9672294259, green: 0.9228517413, blue: 0.9004820585, alpha: 1)
+        UIDesign.styleBackgroundColor(self.view)
         UIDesign.styleNagivationBar(self.navigationController!.navigationBar)
         UIDesign.styleTableView(searchTableView)
         UIDesign.styleSearchBar(searchBar)

@@ -37,10 +37,9 @@ class FavoritesViewController: UIViewController {
         self.title = "Favorites"
         self.navigationItem.rightBarButtonItem = signOutButton
         
-        styleObjects()
-        
         addSubviews()
         addConstraints()
+        styleObjects()
     }
     
     //MARK: - Objc Functions

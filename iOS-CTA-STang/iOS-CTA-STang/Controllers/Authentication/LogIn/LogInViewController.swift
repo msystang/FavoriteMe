@@ -12,10 +12,7 @@ class LogInViewController: UIViewController {
     //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Title"
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
-        label.textColor = .white
-        label.textAlignment = .center
+        label.text = "Events and Dutch Art!"
         return label
     }()
     
@@ -62,7 +59,6 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         
         addSubviews()
         addConstraints()

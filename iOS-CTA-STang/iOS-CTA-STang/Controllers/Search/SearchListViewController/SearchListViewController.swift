@@ -13,6 +13,7 @@ class SearchListViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.searchBarStyle = .minimal
         return searchBar
     }()
     
@@ -57,10 +58,9 @@ class SearchListViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = signOutButton
         
-        styleObjects()
-        
         addSubviews()
         addConstraints()
+        styleObjects()
         
     }
     

@@ -11,6 +11,7 @@ import UIKit
 extension SignUpViewController {
     //MARK: - UI Design
     func styleObjects() {
+        UIDesign.styleLoginBackgroundColor(self.view)
         UIDesign.styleTextField(emailTextField)
         UIDesign.styleTextField(passwordTextField)
         UIDesign.styleButton(signUpButton)
@@ -89,7 +90,7 @@ extension SignUpViewController {
             signUpButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             signUpButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5),
             signUpButton.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            signUpButton.heightAnchor.constraint(equalToConstant: 50)
+            signUpButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
 

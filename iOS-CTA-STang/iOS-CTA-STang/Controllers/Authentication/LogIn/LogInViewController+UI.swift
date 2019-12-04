@@ -11,6 +11,8 @@ import UIKit
 extension LogInViewController {
     //MARK: - UI Design
     func styleObjects() {
+        UIDesign.styleLoginBackgroundColor(self.view)
+        UIDesign.styleHeaderLabel(titleLabel)
         UIDesign.styleTextField(emailTextField)
         UIDesign.styleTextField(passwordTextField)
         UIDesign.styleButton(loginButton)
@@ -42,7 +44,7 @@ extension LogInViewController {
             emailTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             passwordTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             loginButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3),
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
+            loginButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
