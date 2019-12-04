@@ -201,9 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
-				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
 				EA4ED74023956AB2004B6F2E /* Event.swift */,
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
+				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
 				EA4ED7722395CB1E004B6F2E /* Favorite.swift */,
 			);
 			path = Models;
@@ -224,8 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED719239567AA004B6F2E /* Main.storyboard */,
-				EA4ED74D23956D03004B6F2E /* SearchTableViewCell.swift */,
-				EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */,
+				EA4ED79023980A52004B6F2E /* SearchTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +353,15 @@
 				EA4ED7862396F8B0004B6F2E /* MuseumItemAPIClient.swift */,
 			);
 			path = APIClients;
+			sourceTree = "<group>";
+		};
+		EA4ED79023980A52004B6F2E /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74D23956D03004B6F2E /* SearchTableViewCell.swift */,
+				EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */,
+			);
+			path = SearchTableViewCell;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
