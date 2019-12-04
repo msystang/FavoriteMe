@@ -207,7 +207,6 @@
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
 				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
 				EA4ED7722395CB1E004B6F2E /* Favorite.swift */,
-				EA4ED79123981545004B6F2E /* Favoritable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +234,7 @@
 		EA4ED73B239569E7004B6F2E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED79323983307004B6F2E /* Protocols */,
 				EA4ED73C239569F5004B6F2E /* Firebase */,
 				EA4ED74F23956DD2004B6F2E /* Networking */,
 				EA4ED75223957758004B6F2E /* UIDesign */,
@@ -365,6 +365,14 @@
 				EA4ED78B239711AF004B6F2E /* SearchTableViewCell+UI.swift */,
 			);
 			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		EA4ED79323983307004B6F2E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED79123981545004B6F2E /* Favoritable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
