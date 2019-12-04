@@ -48,5 +48,4 @@ class DetailsViewController: UIViewController {
         
     }
     
-    
 }
