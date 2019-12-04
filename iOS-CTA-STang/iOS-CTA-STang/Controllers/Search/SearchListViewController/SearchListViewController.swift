@@ -13,6 +13,8 @@ class SearchListViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
+        searchBar.searchTextField.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+        searchBar.searchTextField.textColor = .white
         searchBar.delegate = self
         return searchBar
     }()
@@ -64,6 +66,7 @@ class SearchListViewController: UIViewController {
     
         let textAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         
         addSubviews()
         addConstraints()

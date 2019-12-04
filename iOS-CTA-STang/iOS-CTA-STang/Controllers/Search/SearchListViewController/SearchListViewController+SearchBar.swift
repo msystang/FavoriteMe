@@ -22,4 +22,6 @@ extension SearchListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchString = searchBar.text
     }
+    
+    
 }
