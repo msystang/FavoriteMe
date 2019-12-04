@@ -11,19 +11,17 @@ import Foundation
 public protocol Favoritable {
     var id: String { get }
     var photoUrl: String { get }
+    var name: String { get }
+    var details: String { get } // DateCreated for MuseumItem, Price for Event
     
     //Event properties
     var isEvent: Bool? { get }
-    var eventName: String? { get }
     var eventTimeDate: String? { get }
-    var eventPrice: String? { get }
     var eventLink: String? { get }
     
     //MuseumItem properties
     var isMuseumItem: Bool? { get }
-    var itemName: String? { get }
     var itemDescription: String? { get }
-    var itemDateCreated: String? { get }
     var itemPlaceProduced: String? { get }
     
 }
