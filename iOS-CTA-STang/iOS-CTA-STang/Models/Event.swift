@@ -52,10 +52,9 @@ struct EventDateWrapper: Codable {
 struct EventDate: Codable {
     let dateTime: String?
     
-    //TODO: Fix formattedDate bug
     var formattedDate: String {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 
         let dateFormatterSet = DateFormatter()
         dateFormatterSet.dateFormat = "MMM d yyyy, h:mm a"

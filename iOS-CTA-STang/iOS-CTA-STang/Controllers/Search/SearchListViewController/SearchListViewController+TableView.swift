@@ -35,7 +35,7 @@ extension SearchListViewController: UITableViewDataSource {
                 
                 //TODO: Use formatted Date
                 cell.titleLabel.text = event.name
-                cell.detailLabel.text = event.dates.start.dateTime
+                cell.detailLabel.text = event.dates.start.formattedDate
                 
                 //TODO: load image as own func?
                 let urlStr = event.images[3].url
@@ -91,7 +91,7 @@ extension SearchListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Pass information into DetailsVC
+    
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         
