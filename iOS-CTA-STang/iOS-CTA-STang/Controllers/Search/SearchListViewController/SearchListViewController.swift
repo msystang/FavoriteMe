@@ -11,18 +11,13 @@ import UIKit
 class SearchListViewController: UIViewController {
     //MARK: - UI Objects
     lazy var searchBar: UISearchBar = {
-        //TODO: Change color of cursor and cancel button to brown and add in UIDesign as style
         let searchBar = UISearchBar()
-        searchBar.searchBarStyle = .minimal
-        searchBar.searchTextField.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
-        searchBar.searchTextField.textColor = .white
         searchBar.delegate = self
         return searchBar
     }()
     
     lazy var searchTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")

@@ -10,11 +10,29 @@ import UIKit
 
 struct UIDesign {
     //TODO: Make background a gradient?
+    static func styleTabBar(_ tabBar: UITabBar) {
+        tabBar.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        tabBar.barTintColor = #colorLiteral(red: 0.9568627451, green: 0.6588235294, blue: 0.5450980392, alpha: 1)
+    }
     
     static func styleNagivationBar(_ navBar: UINavigationBar) {
-        navBar.tintColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
-        let textAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)]
+        navBar.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        navBar.barTintColor = #colorLiteral(red: 0.9568627451, green: 0.6588235294, blue: 0.5450980392, alpha: 1)
+        let textAttributes = [
+            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+            NSAttributedString.Key.font : UIFont(name: "AppleSDGothicNeo-Bold", size: 20)] as [NSAttributedString.Key : Any]
         navBar.titleTextAttributes = textAttributes
+    }
+    
+    static func styleTableView(_ tableView: UITableView) {
+        tableView.backgroundColor = .clear
+    }
+    
+    static func styleSearchBar(_ searchBar: UISearchBar) {
+        //TODO: Change color of cursor and cancel button to brown and add in UIDesign as style
+        searchBar.searchBarStyle = .minimal
+        searchBar.searchTextField.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+        searchBar.searchTextField.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
     }
     
     static func styleTextField(_ textField: UITextField) {
@@ -49,15 +67,15 @@ struct UIDesign {
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        label.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
     }
     
     static func styleDetailLabel(_ label: UILabel) {
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .left
-        label.textColor = .white
+        label.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
     }
     

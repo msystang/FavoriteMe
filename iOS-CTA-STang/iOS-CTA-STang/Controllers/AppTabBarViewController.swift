@@ -33,7 +33,7 @@ class AppTabBarViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.tabBar.tintColor = #colorLiteral(red: 0.9568627451, green: 0.6588235294, blue: 0.5450980392, alpha: 1)
+        UIDesign.styleTabBar(self.tabBar)
     }
     
 }

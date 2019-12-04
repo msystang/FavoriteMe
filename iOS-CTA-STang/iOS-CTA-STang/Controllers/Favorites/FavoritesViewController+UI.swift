@@ -10,7 +10,7 @@ import UIKit
 
 extension FavoritesViewController {
     func styleObjects() {
-        self.view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.9672294259, green: 0.9228517413, blue: 0.9004820585, alpha: 1)
         UIDesign.styleNagivationBar(self.navigationController!.navigationBar)
     }
     
