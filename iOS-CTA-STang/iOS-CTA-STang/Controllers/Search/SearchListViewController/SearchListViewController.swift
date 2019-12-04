@@ -35,6 +35,7 @@ class SearchListViewController: UIViewController {
     
     var selectedExperience: UserExperience? = nil
     
+    //TODO: Refactor to set Events and MuseumItem to Favoritable protocol and replace switches?
     var events = [Event]() {
         didSet {
             searchTableView.reloadData()

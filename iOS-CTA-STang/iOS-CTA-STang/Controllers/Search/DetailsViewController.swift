@@ -10,6 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    //MARK: - UI Objects
     @IBOutlet weak var detailImageView: UIImageView!
     
     @IBOutlet weak var detailTitleLabel: UILabel!
@@ -18,18 +19,28 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var favoriteButton: UIButton!
     
+    //MARK: - Internal Properties
+    var selectedExperience: UserExperience!
+
+    //TODO: Refactor to pass over one Favoritable protocol property 
+    var event: Event?
+    var museumItem: MuseumItem?
+    
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
     }
     
+    //MARK: - IBAction Methods
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        
     }
+    
     
 }

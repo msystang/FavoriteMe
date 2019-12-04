@@ -93,7 +93,10 @@ extension SearchListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Pass information into DetailsVC
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController")
+        let detailsVC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        
+        detailsVC.selectedExperience = selectedExperience
+        
         self.present(detailsVC, animated: true, completion: nil)
         
     }
