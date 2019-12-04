@@ -57,6 +57,7 @@
 		EA4ED79223981545004B6F2E /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79123981545004B6F2E /* Favoritable.swift */; };
 		EA4ED79523983353004B6F2E /* museumItemDetailJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED79423983353004B6F2E /* museumItemDetailJSON.json */; };
 		EA4ED79723983487004B6F2E /* MuseumItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */; };
+		EA4ED798239835B9004B6F2E /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79123981545004B6F2E /* Favoritable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -610,6 +611,7 @@
 				EA4ED7782396BC9B004B6F2E /* Event.swift in Sources */,
 				EA4ED77C2396D442004B6F2E /* MuseumItem.swift in Sources */,
 				EA4ED72E239567AC004B6F2E /* iOS_CTA_STangTests.swift in Sources */,
+				EA4ED798239835B9004B6F2E /* Favoritable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

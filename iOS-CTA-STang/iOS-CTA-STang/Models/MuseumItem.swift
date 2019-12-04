@@ -24,6 +24,7 @@ struct RijksmuseumResponse: Codable {
 struct MuseumItem: Codable {
     let links: Link
     let title: String
+    let objectNumber: String
     let principalOrFirstMaker: String
     let webImage: ItemImage
 

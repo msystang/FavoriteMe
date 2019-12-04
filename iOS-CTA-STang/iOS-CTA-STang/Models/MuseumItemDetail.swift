@@ -9,5 +9,5 @@
 import Foundation
 
 struct MuseumItemDetail: Codable {
-    //URL to use: https://www.rijksmuseum.nl/api/en/collection/\(id)?key=\(Secrets.rijksmuseumAPIKey)
+    //URL to use: https://www.rijksmuseum.nl/api/en/collection/\(objectNumber)?key=\(Secrets.rijksmuseumAPIKey)
 }
