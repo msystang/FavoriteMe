@@ -58,7 +58,7 @@ extension SearchTableViewCell {
         
         NSLayoutConstraint.activate([
             labelStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            labelStackView.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 5),
+            labelStackView.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 10),
             labelStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             labelStackView.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -10),
             titleLabel.leadingAnchor.constraint(equalTo: labelStackView.leadingAnchor),
