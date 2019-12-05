@@ -236,7 +236,8 @@
 			children = (
 				EA4ED7602395A487004B6F2E /* AppTabBarViewController.swift */,
 				EA4ED74423956ACE004B6F2E /* Authentication */,
-				EA4ED75F2395A40E004B6F2E /* Search */,
+				EA4ED78A239709FD004B6F2E /* SearchListViewController */,
+				EA4ED7A92399B4D1004B6F2E /* DetailsVIewController */,
 				EA4ED75E2395A405004B6F2E /* Favorites */,
 			);
 			path = Controllers;
@@ -331,15 +332,6 @@
 				EA4ED75C2395A16D004B6F2E /* FavoritesViewController+UI.swift */,
 			);
 			path = Favorites;
-			sourceTree = "<group>";
-		};
-		EA4ED75F2395A40E004B6F2E /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				EA4ED78A239709FD004B6F2E /* SearchListViewController */,
-				EA4ED7A92399B4D1004B6F2E /* DetailsVIewController */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		EA4ED7662395BA0B004B6F2E /* SignUp */ = {
