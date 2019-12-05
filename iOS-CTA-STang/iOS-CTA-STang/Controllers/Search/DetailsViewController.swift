@@ -46,6 +46,26 @@ class DetailsViewController: UIViewController {
     private func loadDataIntoObjects() {
         detailImageView.image = detailImage
         detailTitleLabel.text = favoritableObject.name
-        detailTextView.text = favoritableObject.details
+        
+        
+        switch selectedExperience! {
+        case UserExperience.ticketMaster:
+            detailTextView.textAlignment = .left
+            
+            //TODO: Add link to ticketmaster
+            detailTextView.text = """
+            Date & Time: \(favoritableObject.details)
+            Price range: \(favoritableObject.eventPrice ?? "No Price Posted")
+            See in Ticketmaster: \(favoritableObject.eventLink ?? "No Link")
+            """
+        case UserExperience.rijksmuseum:
+            //TODO: Add more museum details from MuseumItemDetails
+            detailTextView.textAlignment = .justified
+            detailTextView.text = """
+            Place of production: \(favoritableObject.details)
+            """
+        }
+        
+        
     }
 }
