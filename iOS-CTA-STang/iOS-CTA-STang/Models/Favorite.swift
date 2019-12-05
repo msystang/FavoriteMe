@@ -11,13 +11,15 @@ import FirebaseFirestore
 
 struct Favorite {
     let id: String
+    let objectID: String
     let creatorID: String
     let name: String
     let details: String
     
     //Instatiating to 'encode' to Firestore
-    init(creatorID: String, name: String, details: String) {
+    init(objectID: String, creatorID: String, name: String, details: String) {
         self.id = UUID().description
+        self.objectID = objectID
         self.creatorID = creatorID
         self.name = name
         self.details = details
@@ -25,11 +27,13 @@ struct Favorite {
     
     //Instatiating when 'decoding' from Firestore
     init?(from dict: [String: Any], id: String) {
-        guard let userID = dict["creatorID"] as? String,
+        guard let objectID = dict["objectID"] as? String,
+        let userID = dict["creatorID"] as? String,
         let name = dict["name"] as? String,
         let details = dict["details"] as? String else { return nil }
         
         self.id = id
+        self.objectID = objectID
         self.creatorID = userID
         self.name = name
         self.details = details
@@ -37,6 +41,7 @@ struct Favorite {
     
     var fieldsDict: [String: Any] {
         return [
+            "objectID": self.objectID,
             "creatorID": self.creatorID,
             "name": self.name,
             "details": self.details,
@@ -46,8 +51,55 @@ struct Favorite {
     // Instantiating Favorite from Favoritable
     init(creatorID: String, favoritableObject: Favoritable) {
         self.id = UUID().description
+        self.objectID = favoritableObject.id
         self.creatorID = creatorID
         self.name = favoritableObject.name
         self.details = favoritableObject.details
     }
 }
+
+
+//struct Favorite {
+//    let objectID: String
+//    let creatorID: String
+//    let name: String
+//    let details: String
+//
+//    //Instatiating to 'encode' to Firestore
+//    init(objectID: String, creatorID: String, name: String, details: String) {
+//        self.objectID = objectID
+//        self.creatorID = creatorID
+//        self.name = name
+//        self.details = details
+//    }
+//
+//    //Instatiating when 'decoding' from Firestore
+//    init?(from dict: [String: Any]) {
+//        guard let userID = dict["creatorID"] as? String,
+//        let objectID = dict["objectID"] as? String,
+//        let name = dict["name"] as? String,
+//        let details = dict["details"] as? String else { return nil }
+//
+//        self.objectID = objectID
+//        self.creatorID = userID
+//        self.name = name
+//        self.details = details
+//    }
+//
+//    var fieldsDict: [String: Any] {
+//        return [
+//            "creatorID": self.creatorID,
+//            "objectID": self.objectID,
+//            "name": self.name,
+//            "details": self.details,
+//        ]
+//    }
+//
+//    // Instantiating Favorite from Favoritable
+//    init(creatorID: String, favoritableObject: Favoritable) {
+//        self.objectID = favoritableObject.id
+//        self.creatorID = creatorID
+//        self.name = favoritableObject.name
+//        self.details = favoritableObject.details
+//    }
+//}
