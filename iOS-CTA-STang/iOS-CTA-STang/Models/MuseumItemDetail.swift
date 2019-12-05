@@ -18,9 +18,7 @@ struct MuseumItemDetailWrapper: Codable {
 }
 
 struct MuseumItemDetail: Codable {
-    //URL to use: https://www.rijksmuseum.nl/api/en/collection/\(objectNumber)?key=\(Secrets.rijksmuseumAPIKey)
-    
     let objectNumber: String
-    let plaqueDescriptionEnglish: String
+    let plaqueDescriptionEnglish: String?
     
 }
