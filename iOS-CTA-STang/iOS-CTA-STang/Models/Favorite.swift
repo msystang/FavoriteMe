@@ -15,14 +15,16 @@ struct Favorite {
     let creatorID: String
     let name: String
     let details: String
+    let photoUrl: String?
     
     //Instatiating to 'encode' to Firestore
-    init(objectID: String, creatorID: String, name: String, details: String) {
+    init(objectID: String, creatorID: String, name: String, details: String, photoUrl: String) {
         self.id = UUID().description
         self.objectID = objectID
         self.creatorID = creatorID
         self.name = name
         self.details = details
+        self.photoUrl = photoUrl
     }
     
     //Instatiating when 'decoding' from Firestore
@@ -30,13 +32,15 @@ struct Favorite {
         guard let objectID = dict["objectID"] as? String,
         let userID = dict["creatorID"] as? String,
         let name = dict["name"] as? String,
-        let details = dict["details"] as? String else { return nil }
+        let details = dict["details"] as? String,
+        let photoUrl = dict["photoUrl"] as? String else { return nil }
         
         self.id = id
         self.objectID = objectID
         self.creatorID = userID
         self.name = name
         self.details = details
+        self.photoUrl = photoUrl
     }
     
     var fieldsDict: [String: Any] {
@@ -45,6 +49,7 @@ struct Favorite {
             "creatorID": self.creatorID,
             "name": self.name,
             "details": self.details,
+            "photoUrl": self.photoUrl
         ]
     }
     
@@ -55,5 +60,6 @@ struct Favorite {
         self.creatorID = creatorID
         self.name = favoritableObject.name
         self.details = favoritableObject.details
+        self.photoUrl = favoritableObject.photoUrl
     }
 }
