@@ -14,7 +14,9 @@ class FavoritesViewController: UIViewController {
     lazy var favoritesTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
-        //TODO: Set delegate/Datasource
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
         return tableView
     }()
     
@@ -25,6 +27,12 @@ class FavoritesViewController: UIViewController {
     }()
     
     //MARK: - Internal Properties
+    var favorites = [Favorite]() {
+        didSet {
+            favoritesTableView.reloadData()
+        }
+    }
+    
     //TODO: Declare these somewhere globally to use across VC's?
     let unfavoritedButtonImage: UIImage? = UIImage(systemName: "heart")
     let favoritedButtonImage: UIImage? = UIImage(systemName: "heart.fill")
@@ -40,6 +48,12 @@ class FavoritesViewController: UIViewController {
         addSubviews()
         addConstraints()
         styleObjects()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadFavorites()
     }
     
     //MARK: - Objc Functions
@@ -64,6 +78,17 @@ class FavoritesViewController: UIViewController {
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
                 window.rootViewController = LogInViewController()
         })
+    }
+    
+    private func loadFavorites() {
+        FirestoreService.manager.getFavorites(forUserID: FirebaseAuthService.manager.currentUser!.uid) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let favoritesFromFB):
+                self?.favorites = favoritesFromFB
+            }
+        }
     }
 
 }
