@@ -47,11 +47,13 @@ class SearchTableViewCell: UITableViewCell {
         //TODO: Determine when to change this image
         button.setImage(UIImage(systemName: "heart"), for: .normal)
 //        button.setImage(currentButtonImage, for: .normal)
-//        button.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(favoriteButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
     
     //MARK: - Internal Properties
+    var delegate: SearchCellDelegate?
+    
 //    var isFavorited: Bool = false
 //
 //    var currentButtonImage: UIImage {
@@ -90,47 +92,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     //MARK: - Objc Functions
-//    @objc func favoriteButtonPressed() {
-//        //Check if already in favorites
-//        
-//        switch isFavorited {
-//        case false:
-//            //If not saved, create new favorite, save in Firestore
-//            saveFavoritableToFirestore()
-//        case true:
-//            //If saved (based on id), delete from Firestore
-//            deleteFavoritableFromFirestore()
-//        }
-//        
-//        //Change button appearance based on isFavorited property
-//        changeFavoriteButtonAppearance()
-//    }
-//    
-//    //MARK: - Public Methods
-//    public func saveFavoritableToFirestore() {
-//        FirestoreService.manager.storeFavorite(favorite: <#T##Favorite#>, completion: <#T##(Result<(), Error>) -> ()#>)
-//    }
-//    
-//    
-//    public func deleteFavoritableFromFirestore() {
-//        
-//    }
-//    
-//    
-//    
-//    public func changeFavoriteButtonAppearance() {
-//        switch isFavorited {
-//        case true:
-//            //Change img
-//            isFavorited = false
-//        case false:
-//            //Change img
-//            isFavorited = true
-//        }
-//    }
-//    
-//    private func createNewFavorite(by currentUserId: String, from favoritableObject: Favoritable) -> Favorite {
-//        let newFavorite = Favorite(creatorID: currentUserId, favoritableObject: favoritableObject)
-//        return newFavorite
-//    }
+    @objc func favoriteButtonPressed(_ sender: UIButton) {
+        delegate?.checkExistsInFavorites(tag: sender.tag)
+    }
 }
