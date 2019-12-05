@@ -14,7 +14,7 @@ extension SearchListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
         
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.imageActivityIndicator.startAnimating()
@@ -42,6 +42,10 @@ extension SearchListViewController: UITableViewDataSource {
             //TODO: add default img
         }
         
+        //Cell Delegation
+        cell.favoriteButton.tag = indexPath.row
+        cell.delegate = self
+        
         return cell
     }
     
@@ -61,7 +65,7 @@ extension SearchListViewController: UITableViewDelegate {
         detailsVC.selectedExperience = selectedExperience
         detailsVC.favoritableObject = favoritableObjects[indexPath.row]
         detailsVC.detailImage = cell.cellImageView.image
-
+        
         self.present(detailsVC, animated: true, completion: nil)
         
     }
