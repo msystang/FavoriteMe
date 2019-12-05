@@ -223,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED73E23956A70004B6F2E /* AppUser.swift */,
-				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
 				EA4ED74023956AB2004B6F2E /* Event.swift */,
 				EA4ED74223956AB9004B6F2E /* MuseumItem.swift */,
 				EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */,
@@ -255,6 +254,7 @@
 		EA4ED73B239569E7004B6F2E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED7AA2399B535004B6F2E /* Enums */,
 				EA4ED79323983307004B6F2E /* Protocols */,
 				EA4ED73C239569F5004B6F2E /* Firebase */,
 				EA4ED74F23956DD2004B6F2E /* Networking */,
@@ -408,6 +408,14 @@
 				EA4ED7A72399AFDC004B6F2E /* DetailsViewController+FavoriteButtonDelegate.swift */,
 			);
 			path = DetailsVIewController;
+			sourceTree = "<group>";
+		};
+		EA4ED7AA2399B535004B6F2E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED7622395ABA0004B6F2E /* UserExperience.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
