@@ -40,6 +40,10 @@ extension FavoritesViewController: UITableViewDataSource {
             //TODO: add default img
         }
         
+        //Cell Delegation
+        cell.favoriteButton.tag = indexPath.row
+        cell.delegate = self
+        
         return cell
     }
 }
