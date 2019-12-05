@@ -67,6 +67,22 @@ struct MuseumItem: Codable, Favoritable {
     var isMuseumItem: Bool? {
         return true
     }
+    
+    //MARK: - Favoritable Functions
+    func existsInFavorites(userID: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+        
+        FirestoreService.manager.getFavorites(forUserID: userID) { (result) in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let favoritesFromFB):
+                let existsInFavorites = favoritesFromFB.contains { (favorite) -> Bool in
+                    favorite.id == self.id
+                }
+                completion(.success(existsInFavorites))
+            }
+        }
+    }
 }
 
 struct Link: Codable {

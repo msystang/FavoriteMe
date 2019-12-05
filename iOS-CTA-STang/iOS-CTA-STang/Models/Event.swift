@@ -26,7 +26,6 @@ struct EventWrapper: Codable {
 }
 
 struct Event: Codable, Favoritable {
-    
     //MARK: - Codable Properties
     private let url: String
     private let images: [EventImage]
@@ -82,6 +81,22 @@ struct Event: Codable, Favoritable {
         let minFormatted = String(format: "%.2f", minPrice)
         let maxFormatted = String(format: "%.2f", maxPrice)
         return "$\(minFormatted) - $\(maxFormatted)"
+    }
+    
+    //MARK: - Favoritable Functions
+    func existsInFavorites(userID: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+        
+        FirestoreService.manager.getFavorites(forUserID: userID) { (result) in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let favoritesFromFB):
+                let existsInFavorites = favoritesFromFB.contains { (favorite) -> Bool in
+                    favorite.id == self.id
+                }
+                completion(.success(existsInFavorites))
+            }
+        }
     }
     
 }

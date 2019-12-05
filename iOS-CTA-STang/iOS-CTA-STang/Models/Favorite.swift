@@ -43,7 +43,7 @@ struct Favorite {
         ]
     }
     
-    // Instantiating Favorite from Event
+    // Instantiating Favorite from Favoritable
     init(creatorID: String, favoritableObject: Favoritable) {
         self.id = UUID().description
         self.creatorID = creatorID

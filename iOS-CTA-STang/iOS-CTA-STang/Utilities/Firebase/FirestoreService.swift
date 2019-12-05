@@ -20,7 +20,7 @@ class FirestoreService {
     
     private let db = Firestore.firestore()
     
-    //MARK: Users
+    //MARK: - Users
     func createUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
@@ -49,7 +49,7 @@ class FirestoreService {
         }
     }
     
-    //MARK: Favorites
+    //MARK: - Favorites
     func storeFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = favorite.fieldsDict
         fields["dateCreated"] = Date()
@@ -75,7 +75,6 @@ class FirestoreService {
                 completion(.success(favorites ?? []))
             }
         }
-        
     }
     
     func removeFavorite() {

@@ -31,7 +31,7 @@ class SearchListViewController: UIViewController {
         return barButton
     }()
     
-    //MARK: - Internal Methods
+    //MARK: - Internal Properties
     var currentUser: AppUser! {
         didSet {
             assignSelectedExperience()
@@ -58,10 +58,9 @@ class SearchListViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = signOutButton
         
+        styleObjects()
         addSubviews()
         addConstraints()
-        styleObjects()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

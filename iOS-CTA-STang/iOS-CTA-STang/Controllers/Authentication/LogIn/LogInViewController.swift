@@ -9,6 +9,8 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    //TODO: Disable buttons when clicked once?
+    
     //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()

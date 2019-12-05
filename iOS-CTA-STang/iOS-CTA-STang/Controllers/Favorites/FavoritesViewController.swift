@@ -24,7 +24,7 @@ class FavoritesViewController: UIViewController {
         return barButton
     }()
     
-    //MARK: Internal Properties
+    //MARK: - Internal Properties
     //TODO: Declare these somewhere globally to use across VC's?
     let unfavoritedButtonImage: UIImage? = UIImage(systemName: "heart")
     let favoritedButtonImage: UIImage? = UIImage(systemName: "heart.fill")

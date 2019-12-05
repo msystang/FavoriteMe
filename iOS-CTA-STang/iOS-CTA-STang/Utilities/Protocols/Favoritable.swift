@@ -22,4 +22,5 @@ public protocol Favoritable {
     //MuseumItem properties
     var isMuseumItem: Bool? { get }
     
+    func existsInFavorites(userID: String, completion: @escaping (Result<Bool, Error>) -> ())
 }
