@@ -24,18 +24,22 @@ class DetailsViewController: UIViewController {
     
     //MARK: - Internal Properties
     var selectedExperience: UserExperience!
-
+    
     var favoritableObject: Favoritable!
     var detailImage: UIImage!
-    
+
     var museumItemplaqueDescription: String? = nil {
         didSet {
             otherInfoTextView.text = "Plaque Description: \(museumItemplaqueDescription ?? "No Plaque Description")"
         }
     }
     
+    var delegate: FavoriteButtonDelegate?
+    
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
+        self.delegate = self
+        
         super.viewDidLoad()
         if selectedExperience == UserExperience.rijksmuseum {
             loadMuseumItemDetails()
@@ -50,7 +54,7 @@ class DetailsViewController: UIViewController {
     
     //MARK: - IBAction Methods
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
-        
+        delegate?.checkExistsInFavorites(tag: nil)
     }
     
     //MARK: - Private Methods

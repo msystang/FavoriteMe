@@ -10,22 +10,25 @@ import Foundation
 
 extension SearchListViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
-    func checkExistsInFavorites(tag: Int) {
-        let favoritableObject = favoritableObjects[tag]
-        
-        favoritableObject.existsInFavorites(userID: currentUser.uid) { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let isFavoritedInFB):
-                
-                switch isFavoritedInFB {
-                case false:
-                    self?.saveFavoritableToFirestore(favoritableObject: favoritableObject)
-                case true:
-                    self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
+    func checkExistsInFavorites(tag: Int?) {
+        if let tag = tag {
+            let favoritableObject = favoritableObjects[tag]
+            
+            
+            favoritableObject.existsInFavorites(userID: currentUser.uid) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let isFavoritedInFB):
+                    
+                    switch isFavoritedInFB {
+                    case false:
+                        self?.saveFavoritableToFirestore(favoritableObject: favoritableObject)
+                    case true:
+                        self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
+                    }
+                    self?.changeButtonAppearance(favoritableObject: favoritableObject, isFavoritedInFB: isFavoritedInFB)
                 }
-                self?.changeButtonAppearance(favoritableObject: favoritableObject, isFavoritedInFB: isFavoritedInFB)
             }
         }
     }
@@ -58,13 +61,13 @@ extension SearchListViewController: FavoriteButtonDelegate {
     }
     
     func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
-//        switch isFavoritedInFB {
-//        case true:
-//
-//        case false:
-//            //Change img
-//        }
+        //        switch isFavoritedInFB {
+        //        case true:
+        //
+        //        case false:
+        //            //Change img
+        //        }
     }
-
+    
     
 }

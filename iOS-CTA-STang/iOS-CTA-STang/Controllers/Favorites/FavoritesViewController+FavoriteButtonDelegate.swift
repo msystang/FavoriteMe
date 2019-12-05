@@ -10,11 +10,13 @@ import Foundation
 
 extension FavoritesViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
-    func checkExistsInFavorites(tag: Int) {
-        let favorite = favorites[tag]
-        let objectID = favorite.objectID
-        
-        deleteFavoritableFromFirebase(objectID: objectID)
+    func checkExistsInFavorites(tag: Int?) {
+        if let tag = tag {
+            let favorite = favorites[tag]
+            let objectID = favorite.objectID
+            
+            deleteFavoritableFromFirebase(objectID: objectID)
+        }
     }
     
     func deleteFavoritableFromFirebase(objectID: String) {

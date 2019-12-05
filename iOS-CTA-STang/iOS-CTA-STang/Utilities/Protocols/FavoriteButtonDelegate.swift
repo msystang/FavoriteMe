@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FavoriteButtonDelegate: AnyObject {
-    func checkExistsInFavorites(tag: Int)
+    func checkExistsInFavorites(tag: Int?)
 }
