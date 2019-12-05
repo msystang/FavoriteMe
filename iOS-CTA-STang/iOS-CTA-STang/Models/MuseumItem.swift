@@ -77,7 +77,7 @@ struct MuseumItem: Codable, Favoritable {
                 completion(.failure(error))
             case .success(let favoritesFromFB):
                 let existsInFavorites = favoritesFromFB.contains { (favorite) -> Bool in
-                    favorite.id == self.id
+                    favorite.objectID == self.id
                 }
                 completion(.success(existsInFavorites))
             }
