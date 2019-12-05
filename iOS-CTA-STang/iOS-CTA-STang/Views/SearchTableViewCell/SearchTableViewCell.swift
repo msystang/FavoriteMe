@@ -94,5 +94,6 @@ class SearchTableViewCell: UITableViewCell {
     //MARK: - Objc Functions
     @objc func favoriteButtonPressed(_ sender: UIButton) {
         delegate?.checkExistsInFavorites(tag: sender.tag)
+        //TODO: Reload cells after deleting
     }
 }

@@ -12,7 +12,6 @@ extension SearchListViewController: SearchCellDelegate {
     //MARK: - SearchCellDelegate Functions
     func checkExistsInFavorites(tag: Int) {
         let favoritableObject = favoritableObjects[tag]
-        let objectID = favoritableObject.id
         
         favoritableObject.existsInFavorites(userID: currentUser.uid) { [weak self] (result) in
             switch result {
@@ -24,8 +23,9 @@ extension SearchListViewController: SearchCellDelegate {
                 case false:
                     self?.saveFavoritableToFirestore(favoritableObject: favoritableObject)
                 case true:
-                    self?.deleteFavoritableFromFirebase(objectID: objectID)
+                    self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
                 }
+                self?.changeButtonAppearance(favoritableObject: favoritableObject, isFavoritedInFB: isFavoritedInFB)
             }
         }
     }
@@ -34,18 +34,18 @@ extension SearchListViewController: SearchCellDelegate {
     func saveFavoritableToFirestore(favoritableObject: Favoritable) {
         let newFavorite = Favorite(creatorID: currentUser.uid, favoritableObject: favoritableObject)
         
-        FirestoreService.manager.storeFavorite(favorite: newFavorite) { [weak self] (result) in
+        FirestoreService.manager.storeFavorite(favorite: newFavorite) { (result) in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(()):
                 print("Saved new favorite to Firestore")
-                self?.changeButtonAppearance()
             }
         }
     }
     
-    func deleteFavoritableFromFirebase(objectID: String) {
+    func deleteFavoritableFromFirebase(favoritableObject: Favoritable) {
+        let objectID = favoritableObject.id
         
         FirestoreService.manager.deleteFavorite(forUserID: currentUser.uid, objectID: objectID) { (result) in
             switch result {
@@ -57,15 +57,12 @@ extension SearchListViewController: SearchCellDelegate {
         }
     }
     
-    func changeButtonAppearance() {
-        //Make this property somewhere more global?
-//        switch isFavorited {
+    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
+//        switch isFavoritedInFB {
 //        case true:
-//            //Change img
-//            isFavorited = false
+//
 //        case false:
 //            //Change img
-//            isFavorited = true
 //        }
     }
 

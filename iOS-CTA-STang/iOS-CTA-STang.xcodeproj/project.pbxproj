@@ -64,6 +64,7 @@
 		EA4ED7A023997BD1004B6F2E /* SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79F23997BD1004B6F2E /* SearchCellDelegate.swift */; };
 		EA4ED7A22399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A12399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift */; };
 		EA4ED7A42399A15B004B6F2E /* FavoritesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A32399A15B004B6F2E /* FavoritesViewController+TableView.swift */; };
+		EA4ED7A62399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A52399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		EA4ED79F23997BD1004B6F2E /* SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellDelegate.swift; sourceTree = "<group>"; };
 		EA4ED7A12399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+SearchCellDelegate.swift"; sourceTree = "<group>"; };
 		EA4ED7A32399A15B004B6F2E /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
+		EA4ED7A52399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+SearchCellDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 			children = (
 				EA4ED74B23956B52004B6F2E /* FavoritesViewController.swift */,
 				EA4ED7A32399A15B004B6F2E /* FavoritesViewController+TableView.swift */,
+				EA4ED7A52399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift */,
 				EA4ED75C2395A16D004B6F2E /* FavoritesViewController+UI.swift */,
 			);
 			path = Favorites;
@@ -604,6 +607,7 @@
 				EA4ED7712395C924004B6F2E /* FirestoreService.swift in Sources */,
 				EA4ED75623957E2F004B6F2E /* SignUpViewController+UI.swift in Sources */,
 				EA4ED76D2395C719004B6F2E /* ViewController+Alerts.swift in Sources */,
+				EA4ED7A62399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift in Sources */,
 				EA4ED75B2395966F004B6F2E /* String+Validation.swift in Sources */,
 				EA4ED77F2396EE11004B6F2E /* SearchListViewController+TableView.swift in Sources */,
 				EA4ED7872396F8B0004B6F2E /* MuseumItemAPIClient.swift in Sources */,
