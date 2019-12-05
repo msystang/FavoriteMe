@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension SearchListViewController: SearchCellDelegate {
+extension SearchListViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
     func checkExistsInFavorites(tag: Int) {
         let favoritableObject = favoritableObjects[tag]

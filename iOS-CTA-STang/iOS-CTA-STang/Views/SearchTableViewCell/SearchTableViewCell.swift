@@ -52,7 +52,7 @@ class SearchTableViewCell: UITableViewCell {
     }()
     
     //MARK: - Internal Properties
-    var delegate: SearchCellDelegate?
+    var delegate: FavoriteButtonDelegate?
     
 //    var isFavorited: Bool = false
 //

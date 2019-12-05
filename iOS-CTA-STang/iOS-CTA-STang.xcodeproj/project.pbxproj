@@ -61,7 +61,7 @@
 		EA4ED79B23995EC7004B6F2E /* MuseumItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */; };
 		EA4ED79C23995ECB004B6F2E /* museumItemDetailJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4ED79423983353004B6F2E /* museumItemDetailJSON.json */; };
 		EA4ED79E2399609F004B6F2E /* MuseumItemDetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79D2399609F004B6F2E /* MuseumItemDetailAPIClient.swift */; };
-		EA4ED7A023997BD1004B6F2E /* SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79F23997BD1004B6F2E /* SearchCellDelegate.swift */; };
+		EA4ED7A023997BD1004B6F2E /* FavoriteButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED79F23997BD1004B6F2E /* FavoriteButtonDelegate.swift */; };
 		EA4ED7A22399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A12399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift */; };
 		EA4ED7A42399A15B004B6F2E /* FavoritesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A32399A15B004B6F2E /* FavoritesViewController+TableView.swift */; };
 		EA4ED7A62399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED7A52399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift */; };
@@ -133,7 +133,7 @@
 		EA4ED79423983353004B6F2E /* museumItemDetailJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = museumItemDetailJSON.json; sourceTree = "<group>"; };
 		EA4ED79623983487004B6F2E /* MuseumItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemDetail.swift; sourceTree = "<group>"; };
 		EA4ED79D2399609F004B6F2E /* MuseumItemDetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemDetailAPIClient.swift; sourceTree = "<group>"; };
-		EA4ED79F23997BD1004B6F2E /* SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellDelegate.swift; sourceTree = "<group>"; };
+		EA4ED79F23997BD1004B6F2E /* FavoriteButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonDelegate.swift; sourceTree = "<group>"; };
 		EA4ED7A12399825F004B6F2E /* SearchListViewController+SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchListViewController+SearchCellDelegate.swift"; sourceTree = "<group>"; };
 		EA4ED7A32399A15B004B6F2E /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
 		EA4ED7A52399A57E004B6F2E /* FavoritesViewController+SearchCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+SearchCellDelegate.swift"; sourceTree = "<group>"; };
@@ -394,7 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED79123981545004B6F2E /* Favoritable.swift */,
-				EA4ED79F23997BD1004B6F2E /* SearchCellDelegate.swift */,
+				EA4ED79F23997BD1004B6F2E /* FavoriteButtonDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -588,7 +588,7 @@
 				EA4ED7A42399A15B004B6F2E /* FavoritesViewController+TableView.swift in Sources */,
 				EA4ED7852396F841004B6F2E /* AppError.swift in Sources */,
 				EA4ED71E239567AA004B6F2E /* iOS_CTA_STang.xcdatamodeld in Sources */,
-				EA4ED7A023997BD1004B6F2E /* SearchCellDelegate.swift in Sources */,
+				EA4ED7A023997BD1004B6F2E /* FavoriteButtonDelegate.swift in Sources */,
 				EA4ED7652395AE29004B6F2E /* SignUpViewController+PickerView.swift in Sources */,
 				EA4ED75823958515004B6F2E /* SearchListViewController+UI.swift in Sources */,
 				EA4ED74E23956D03004B6F2E /* SearchTableViewCell.swift in Sources */,

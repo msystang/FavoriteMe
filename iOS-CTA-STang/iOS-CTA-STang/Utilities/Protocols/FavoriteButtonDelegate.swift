@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchCellDelegate: AnyObject {
+protocol FavoriteButtonDelegate: AnyObject {
     func checkExistsInFavorites(tag: Int)
 }
