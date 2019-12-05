@@ -15,10 +15,10 @@ enum HTTPMethod: String {
 
 class NetworkManager {
     
-    // MARK: - Static Properties
+    //MARK: - Static Properties
     static let manager = NetworkManager()
     
-    // MARK: - Instance Methods
+    //MARK: - Instance Methods
     func performDataTask(withUrl url: URL,
                          andHTTPBody body: Data? = nil,
                          andMethod httpMethod: HTTPMethod,
@@ -55,7 +55,7 @@ class NetworkManager {
         }.resume()
     }
     
-    // MARK: - Private Properties and Initializers
+    //MARK: - Private Properties and Initializers
     
     private let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     

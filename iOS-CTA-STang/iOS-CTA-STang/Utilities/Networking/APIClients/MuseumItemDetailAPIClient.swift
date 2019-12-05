@@ -10,11 +10,11 @@ import Foundation
 
 class MuseumItemDetailAPIClient {
     
-    // MARK: - Static Properties
+    //MARK: - Static Properties
     
     static let manager = MuseumItemDetailAPIClient()
     
-    // MARK: - Instance Methods
+    //MARK: - Instance Methods
     
     static func getSearchResultsURLStr(from objectNumber: String) -> String {
         return "https://www.rijksmuseum.nl/api/en/collection/\(objectNumber)?key=\(Secrets.rijksmuseumAPIKey)"
@@ -44,7 +44,7 @@ class MuseumItemDetailAPIClient {
         }
     }
     
-    // MARK: - Private Properties and Initializers
+    //MARK: - Private Properties and Initializers
     
     private init() {}
 }

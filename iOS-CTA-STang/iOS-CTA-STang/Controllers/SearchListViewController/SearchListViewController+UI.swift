@@ -9,6 +9,7 @@
 import UIKit
 
 extension SearchListViewController {
+    //MARK: - UI Design
     func styleObjects() {
         UIDesign.styleBackgroundColor(self.view)
         UIDesign.styleNagivationBar(self.navigationController!.navigationBar)
@@ -16,7 +17,7 @@ extension SearchListViewController {
         UIDesign.styleSearchBar(searchBar)
     }
     
-    
+    //MARK: - Constraint Methods
     func addSubviews() {
         view.addSubview(searchBar)
         view.addSubview(searchTableView)

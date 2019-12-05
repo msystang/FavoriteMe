@@ -11,10 +11,10 @@ import UIKit
 
 class ImageHelper {
     
-    // MARK: - Static Properties
+    //MARK: - Static Properties
     static let manager = ImageHelper()
     
-    // MARK: - Instance Methods
+    //MARK: - Instance Methods
     func getImage(urlStr: String, completionHandler: @escaping (Result<UIImage, AppError>) -> ()) {
         
         guard let url = URL(string: urlStr) else {
@@ -42,7 +42,7 @@ class ImageHelper {
         } .resume()
     }
     
-    // MARK: - Private Properties and Initializers
+    //MARK: - Private Properties and Initializers
     private init() {}
 }
 

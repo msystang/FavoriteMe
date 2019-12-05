@@ -9,6 +9,7 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    //TODO: Refresh tableview when an object is deleted
     
     //MARK: - UI Objects
     lazy var favoritesTableView: UITableView = {
@@ -33,11 +34,6 @@ class FavoritesViewController: UIViewController {
         }
     }
     
-    //TODO: Declare these somewhere globally to use across VC's?
-    let unfavoritedButtonImage: UIImage? = UIImage(systemName: "heart")
-    let favoritedButtonImage: UIImage? = UIImage(systemName: "heart.fill")
-    
-    
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +50,7 @@ class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         loadFavorites()
-        favoritesTableView.reloadData()
+        //        favoritesTableView.reloadData()
     }
     
     //MARK: - Objc Functions
@@ -77,12 +73,13 @@ class FavoritesViewController: UIViewController {
             else { return }
         
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
-                window.rootViewController = LogInViewController()
+            window.rootViewController = LogInViewController()
         })
     }
     
     private func loadFavorites() {
-        FirestoreService.manager.getFavorites(forUserID: FirebaseAuthService.manager.currentUser!.uid) { [weak self] (result) in
+        FirestoreService.manager.getFavorites(forUserID: FirebaseAuthService.manager.currentUser!.uid) {
+            [weak self] (result) in
             switch result {
             case .failure(let error):
                 print(error)
@@ -91,5 +88,5 @@ class FavoritesViewController: UIViewController {
             }
         }
     }
-
+    
 }

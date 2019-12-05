@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
-    //TODO: Add cancel button to pop back to LogIn VC
+    //TODO: Add cancel button to pop back to LogIn VC?
     
     //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController {
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addSubviews()
         addConstraints()
         styleObjects()
@@ -92,7 +92,7 @@ class SignUpViewController: UIViewController {
         }
         signUpButton.isEnabled = true
     }
-
+    
     @objc func trySignUp() {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             showAlert(title: "Error", message: "Please fill out all fields.")
@@ -117,14 +117,14 @@ class SignUpViewController: UIViewController {
     //MARK: - Private Methods
     
     private func handleCreateAccountResponse(with result: Result<User, Error>) {
-            switch result {
-            case .success(let user):
-                let newAppUser = AppUser(from: user, selectedExperience: selectedExperience)
-                FirestoreService.manager.createUser(user: newAppUser) { [weak self] (newResult) in
-                    self?.handleCreatedUserInFirestore(result: newResult)
-                }
-            case .failure(let error):
-                self.showAlert(title: "Error creating user", message: "An error occured while creating new account: \(error)")
+        switch result {
+        case .success(let user):
+            let newAppUser = AppUser(from: user, selectedExperience: selectedExperience)
+            FirestoreService.manager.createUser(user: newAppUser) { [weak self] (newResult) in
+                self?.handleCreatedUserInFirestore(result: newResult)
+            }
+        case .failure(let error):
+            self.showAlert(title: "Error creating user", message: "An error occured while creating new account: \(error)")
         }
     }
     
@@ -138,11 +138,11 @@ class SignUpViewController: UIViewController {
             }
             
             UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
-                    window.rootViewController = {
-                        let searchVC = AppTabBarViewController()
-                            searchVC.selectedIndex = 0
-                        return searchVC
-                    }()
+                window.rootViewController = {
+                    let searchVC = AppTabBarViewController()
+                    searchVC.selectedIndex = 0
+                    return searchVC
+                }()
             }, completion: nil)
         case .failure(let error):
             self.showAlert(title: "Error creating user", message: "An error occured while creating new account \(error)")

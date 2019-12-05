@@ -10,11 +10,11 @@ import Foundation
 
 class EventAPIClient {
     
-    // MARK: - Static Properties
+    //MARK: - Static Properties
     
     static let manager = EventAPIClient()
     
-    // MARK: - Instance Methods
+    //MARK: - Instance Methods
     
     static func getSearchResultsURLStr(from searchString: String) -> String {
         let formattedSearchString = searchString.replacingOccurrences(of: " ", with: "%20")
@@ -46,7 +46,7 @@ class EventAPIClient {
         }
     }
     
-    // MARK: - Private Properties and Initializers
+    //MARK: - Private Properties and Initializers
     
     private init() {}
 }

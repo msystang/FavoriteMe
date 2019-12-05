@@ -9,11 +9,13 @@
 import UIKit
 
 extension SearchTableViewCell {
+    //MARK: - UI Design
     func styleObjects() {
         UIDesign.styleNameLabel(titleLabel)
         UIDesign.styleDetailLabel(detailLabel)
     }
     
+    //MARK: - Constraint Methods
     func addsubViews() {
         self.contentView.addSubview(cellImageView)
         self.contentView.addSubview(favoriteButton)
@@ -74,5 +76,5 @@ extension SearchTableViewCell {
             imageActivityIndicator.centerXAnchor.constraint(equalTo: cellImageView.centerXAnchor)
         ])
     }
-
+    
 }

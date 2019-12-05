@@ -27,7 +27,7 @@ class DetailsViewController: UIViewController {
     
     var favoritableObject: Favoritable!
     var detailImage: UIImage!
-
+    
     var museumItemplaqueDescription: String? = nil {
         didSet {
             otherInfoTextView.text = "Plaque Description: \(museumItemplaqueDescription ?? "No Plaque Description")"
@@ -73,7 +73,6 @@ class DetailsViewController: UIViewController {
             }
         }
     }
-    
     
     private func loadDataIntoObjects() {
         detailImageView.image = detailImage

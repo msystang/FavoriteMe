@@ -16,11 +16,13 @@ fileprivate enum FireStoreCollections: String {
 }
 
 class FirestoreService {
+    //MARK: - Static Properties
     static let manager = FirestoreService()
     
     private let db = Firestore.firestore()
     
-    //MARK: - Users
+    //MARK: - Instance Methods
+    //Users
     func createUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
@@ -49,7 +51,7 @@ class FirestoreService {
         }
     }
     
-    //MARK: - Favorites
+    //Favorites
     func storeFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = favorite.fieldsDict
         fields["dateCreated"] = Date()
@@ -115,5 +117,6 @@ class FirestoreService {
         
     }
     
+    //MARK: - Private Properties and Initializers
     private init () {}
 }

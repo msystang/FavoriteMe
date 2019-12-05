@@ -33,14 +33,12 @@ extension SearchListViewController: FavoriteButtonDelegate {
                         self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
                         cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
                     }
-                    self?.changeButtonAppearance(favoritableObject: favoritableObject, isFavoritedInFB: isFavoritedInFB)
                     
                 }
             }
         }
     }
     
-    //TODO: Determine if these functions need to be in protocol
     func saveFavoritableToFirestore(favoritableObject: Favoritable) {
         let newFavorite = Favorite(creatorID: currentUser.uid, favoritableObject: favoritableObject)
         
@@ -67,14 +65,14 @@ extension SearchListViewController: FavoriteButtonDelegate {
         }
     }
     
-    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
+//    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
         //        switch isFavoritedInFB {
         //        case true:
         //
         //        case false:
         //            //Change img
         //        }
-    }
+//    }
     
     
 }

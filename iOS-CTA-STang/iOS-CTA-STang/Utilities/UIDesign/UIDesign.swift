@@ -10,6 +10,8 @@ import UIKit
 
 struct UIDesign {
     //TODO: Make background a gradient?
+    
+    //
     static func styleLoginBackgroundColor(_ view: UIView) {
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.6588235294, blue: 0.5450980392, alpha: 1)
     }

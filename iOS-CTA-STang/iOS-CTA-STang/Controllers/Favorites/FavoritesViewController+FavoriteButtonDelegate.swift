@@ -31,7 +31,7 @@ extension FavoritesViewController: FavoriteButtonDelegate {
         }
     }
     
-    func changeButtonAppearance() {
+//    func changeButtonAppearance() {
         //Make this property somewhere more global?
         //        switch isFavorited {
         //        case true:
@@ -41,7 +41,6 @@ extension FavoritesViewController: FavoriteButtonDelegate {
         //            //Change img
         //            isFavorited = true
         //        }
-    }
-    
+//    }
     
 }

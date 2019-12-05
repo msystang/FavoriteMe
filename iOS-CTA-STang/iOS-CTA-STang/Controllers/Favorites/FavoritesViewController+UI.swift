@@ -9,11 +9,13 @@
 import UIKit
 
 extension FavoritesViewController {
+    //MARK: - UI Design
     func styleObjects() {
         UIDesign.styleBackgroundColor(self.view)
         UIDesign.styleNagivationBar(self.navigationController!.navigationBar)
     }
     
+    //MARK: - Constraint Methods
     func addSubviews() {
         view.addSubview(favoritesTableView)
     }

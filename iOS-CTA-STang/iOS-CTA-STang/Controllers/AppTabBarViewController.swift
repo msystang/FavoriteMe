@@ -32,7 +32,7 @@ class AppTabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         UIDesign.styleTabBar(self.tabBar)
     }
     

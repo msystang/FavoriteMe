@@ -93,7 +93,5 @@ extension SignUpViewController {
             signUpButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
-
-
-
+    
 }

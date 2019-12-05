@@ -80,7 +80,7 @@ class LogInViewController: UIViewController {
             return
         }
         
-        //MARK: TODO - remove whitespace (if any) from email/password
+        //TODO - remove whitespace (if any) from email/password
         
         guard email.isValidEmail else {
             showAlert(title: "Error", message: "Please enter a valid email")
@@ -111,13 +111,13 @@ class LogInViewController: UIViewController {
             }
             
             UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
-                    window.rootViewController = {
-                        let searchVC = AppTabBarViewController()
-                            searchVC.selectedIndex = 0
-                        return searchVC
-                    }()
+                window.rootViewController = {
+                    let searchVC = AppTabBarViewController()
+                    searchVC.selectedIndex = 0
+                    return searchVC
+                }()
             }, completion: nil)
-
+            
         }
     }
 }

@@ -51,7 +51,7 @@ class SearchTableViewCell: UITableViewCell {
     
     //MARK: - Internal Properties
     var delegate: FavoriteButtonDelegate?
-
+    
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,7 +66,7 @@ class SearchTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //MARK: - Misc Cell Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -81,6 +81,5 @@ class SearchTableViewCell: UITableViewCell {
     //MARK: - Objc Functions
     @objc func favoriteButtonPressed(_ sender: UIButton) {
         delegate?.checkExistsInFavorites(tag: sender.tag)
-        //TODO: Reload cells after deleting
     }
 }

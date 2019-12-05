@@ -32,7 +32,6 @@ extension DetailsViewController: FavoriteButtonDelegate {
         }
     }
     
-    //TODO: Determine if these functions need to be in protocol
     func saveFavoritableToFirestore(favoritableObject: Favoritable) {
         let newFavorite = Favorite(creatorID: FirebaseAuthService.manager.currentUser!.uid, favoritableObject: favoritableObject)
         
@@ -59,14 +58,14 @@ extension DetailsViewController: FavoriteButtonDelegate {
         }
     }
     
-    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
+//    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
 //        switch isFavoritedInFB {
 //        case true:
 //
 //        case false:
 //            //Change img
 //        }
-    }
+//    }
 
     
 }

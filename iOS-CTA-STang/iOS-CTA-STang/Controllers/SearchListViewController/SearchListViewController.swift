@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchListViewController: UIViewController {
+    //TODO: Reload tableview when DetailVC is dismissed -> fav button must be updated
+    
     //MARK: - UI Objects
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -135,7 +137,6 @@ class SearchListViewController: UIViewController {
         }
     }
     
-    //TODO: Load default results before searchString is used?
     private func loadEvents() {
         let urlStr = EventAPIClient.getSearchResultsURLStr(from: searchString ?? "")
         
@@ -173,9 +174,9 @@ class SearchListViewController: UIViewController {
             else { return }
         
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
-                window.rootViewController = LogInViewController()
+            window.rootViewController = LogInViewController()
         })
     }
-
+    
 }
 
