@@ -23,15 +23,15 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-df-ee6">
-                                <rect key="frame" x="50" y="458.5" width="314" height="313.5"/>
+                                <rect key="frame" x="50" y="492.5" width="314" height="279.5"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hh-Ji-49K">
-                                <rect key="frame" x="50" y="428" width="314" height="20.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="50" y="428" width="314" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -46,18 +46,27 @@
                                     <action selector="favoriteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K63-Xi-Tw2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-ng-yTm">
+                                <rect key="frame" x="50" y="462" width="314" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.6588235294117647" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0BA-L5-rpg"/>
+                            <constraint firstItem="eAO-df-ee6" firstAttribute="top" secondItem="dmM-ng-yTm" secondAttribute="bottom" constant="10" id="2Ie-mw-Vf3"/>
                             <constraint firstItem="9Hh-Ji-49K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8B8-F9-Mv1"/>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="CDN-JS-dBi"/>
                             <constraint firstItem="eAO-df-ee6" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="Ht5-04-Lik"/>
                             <constraint firstItem="9Hh-Ji-49K" firstAttribute="top" secondItem="raP-pP-4MV" secondAttribute="bottom" constant="20" id="KXF-ZG-MiD"/>
                             <constraint firstItem="9Hh-Ji-49K" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="M5g-pQ-9W7"/>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="top" secondItem="9Hh-Ji-49K" secondAttribute="bottom" constant="10" id="Oxs-B7-fjV"/>
                             <constraint firstItem="BBK-Zk-gat" firstAttribute="top" secondItem="eAO-df-ee6" secondAttribute="bottom" constant="20" id="TeS-ui-MBS"/>
                             <constraint firstItem="eAO-df-ee6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vto-PW-wMn"/>
                             <constraint firstItem="BBK-Zk-gat" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WvD-Cg-21y"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="cAg-5f-qL3"/>
-                            <constraint firstItem="eAO-df-ee6" firstAttribute="top" secondItem="9Hh-Ji-49K" secondAttribute="bottom" constant="10" id="d4t-7G-nHj"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rl9-WP-Dyl"/>
                             <constraint firstItem="raP-pP-4MV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sMc-zU-OPh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBK-Zk-gat" secondAttribute="bottom" constant="20" id="uWh-LA-CYV"/>
@@ -66,9 +75,10 @@
                     </view>
                     <connections>
                         <outlet property="detailImageView" destination="raP-pP-4MV" id="sM3-Il-0BP"/>
-                        <outlet property="detailTextView" destination="eAO-df-ee6" id="qxR-Wo-8K0"/>
-                        <outlet property="detailTitleLabel" destination="9Hh-Ji-49K" id="nX5-B8-HUp"/>
+                        <outlet property="detailLabel" destination="dmM-ng-yTm" id="hxl-kZ-6KF"/>
                         <outlet property="favoriteButton" destination="BBK-Zk-gat" id="8Fl-9f-u4r"/>
+                        <outlet property="nameLabel" destination="9Hh-Ji-49K" id="U0D-3H-Tl3"/>
+                        <outlet property="otherInfoTextView" destination="eAO-df-ee6" id="IOX-5D-Ohy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
