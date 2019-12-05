@@ -77,8 +77,42 @@ class FirestoreService {
         }
     }
     
-    func removeFavorite() {
-        //TODO: Create removeFavorite func by updating isFavorite property
+    
+    func getDocument(forUserID: String, objectID: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
+    
+        db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).whereField("objectID", isEqualTo: objectID).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let favorites = snapshot?.documents.compactMap({ (snapshot) -> Favorite? in
+                    let favoriteID = snapshot.documentID
+                    let favorite = Favorite(from: snapshot.data(), id: favoriteID)
+                    return favorite
+                })
+                completion(.success(favorites ?? []))
+            }
+        }
+    }
+    
+    func deleteFavorite(forUserID: String, objectID: String, completion: @escaping (Result<(),Error>) -> ()) {
+        
+        getDocument(forUserID: forUserID, objectID: objectID) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let favoritesFromFB):
+                let documentID = favoritesFromFB[0].id
+                self?.db.collection(FireStoreCollections.favorites.rawValue).document(documentID).delete() { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(()))
+                    }
+                }
+
+            }
+        }
+        
     }
     
     private init () {}
