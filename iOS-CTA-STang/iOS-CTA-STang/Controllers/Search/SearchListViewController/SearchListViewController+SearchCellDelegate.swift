@@ -11,21 +11,20 @@ import Foundation
 extension SearchListViewController: SearchCellDelegate {
     //MARK: - SearchCellDelegate Functions
     func checkExistsInFavorites(tag: Int) {
-        //Check if already in favorites
         let favoritableObject = favoritableObjects[tag]
-        var isFavorited: Bool = false
+        let objectID = favoritableObject.id
         
         favoritableObject.existsInFavorites(userID: currentUser.uid) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let isFavoritedFromFB):
-                isFavorited = isFavoritedFromFB
-                switch isFavorited {
+            case .success(let isFavoritedInFB):
+                
+                switch isFavoritedInFB {
                 case false:
                     self?.saveFavoritableToFirestore(favoritableObject: favoritableObject)
                 case true:
-                    self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
+                    self?.deleteFavoritableFromFirebase(objectID: objectID)
                 }
             }
         }
@@ -46,8 +45,16 @@ extension SearchListViewController: SearchCellDelegate {
         }
     }
     
-    func deleteFavoritableFromFirebase(favoritableObject: Favoritable) {
+    func deleteFavoritableFromFirebase(objectID: String) {
         
+        FirestoreService.manager.deleteFavorite(forUserID: currentUser.uid, objectID: objectID) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(()):
+                print("Removed from favorites")
+            }
+        }
     }
     
     func changeButtonAppearance() {
