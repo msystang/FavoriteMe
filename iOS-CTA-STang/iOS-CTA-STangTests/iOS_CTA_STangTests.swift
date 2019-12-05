@@ -78,5 +78,39 @@ class iOS_CTA_STangTests: XCTestCase {
         // Assert
         XCTAssertTrue(museumItems.count == 20, "Was expecting 20 museum items, but found \(museumItems.count)")
     }
+    
+    // MARK: - MuseumItemDetail Model
+    func testMuseumItemDetailModelDecode() {
+        guard let jsonPath = Bundle.main.path(forResource: "museumItemDetailJSON", ofType: "json") else {
+            XCTFail("Could not find museumItemDetailJSON file")
+            return
+        }
+        
+        let jsonURL = URL(fileURLWithPath: jsonPath)
+        var museumItemDetailJSONData = Data()
+        
+        do {
+            museumItemDetailJSONData = try Data(contentsOf: jsonURL)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Act
+        var museumItemDetails: MuseumItemDetail?
+        
+        do {
+            let museumItemDetailsInfo = try MuseumItemDetailWrapper.decodeMuseumItemDetailsFromData(from: museumItemDetailJSONData)
+            museumItemDetails = museumItemDetailsInfo
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Assert
+        if let museumItemDetails = museumItemDetails {
+            XCTAssertTrue(museumItemDetails.objectNumber == "SK-C-5", "Was expecting objectNumber 'SK-C-5', but found \(museumItemDetails.objectNumber)")
+        } else {
+            XCTFail("Found nil data")
+        }
+    }
 
 }
