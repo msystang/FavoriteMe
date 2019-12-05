@@ -337,8 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4ED78A239709FD004B6F2E /* SearchListViewController */,
-				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
-				EA4ED7A72399AFDC004B6F2E /* DetailsViewController+FavoriteButtonDelegate.swift */,
+				EA4ED7A92399B4D1004B6F2E /* DetailsVIewController */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -400,6 +399,15 @@
 				EA4ED79F23997BD1004B6F2E /* FavoriteButtonDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EA4ED7A92399B4D1004B6F2E /* DetailsVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED74923956B1D004B6F2E /* DetailsViewController.swift */,
+				EA4ED7A72399AFDC004B6F2E /* DetailsViewController+FavoriteButtonDelegate.swift */,
+			);
+			path = DetailsVIewController;
 			sourceTree = "<group>";
 		};
 		F0AE31380687F305F5476F4B /* Frameworks */ = {
