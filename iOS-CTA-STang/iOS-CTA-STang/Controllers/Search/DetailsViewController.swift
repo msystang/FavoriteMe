@@ -14,9 +14,11 @@ class DetailsViewController: UIViewController {
     //MARK: - UI Objects
     @IBOutlet weak var detailImageView: UIImageView!
     
-    @IBOutlet weak var detailTitleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var detailTextView: UITextView!
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var otherInfoTextView: UITextView!
     
     @IBOutlet weak var favoriteButton: UIButton!
     
@@ -26,15 +28,24 @@ class DetailsViewController: UIViewController {
     var favoritableObject: Favoritable!
     var detailImage: UIImage!
     
+    var museumItemplaqueDescription: String? = nil {
+        didSet {
+            otherInfoTextView.text = "Plaque Description: \(museumItemplaqueDescription ?? "No Plaque Description")"
+        }
+    }
+    
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataIntoObjects()
+        if selectedExperience == UserExperience.rijksmuseum {
+            loadMuseumItemDetails()
+        }
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadDataIntoObjects()
     }
     
     //MARK: - IBAction Methods
@@ -43,27 +54,39 @@ class DetailsViewController: UIViewController {
     }
     
     //MARK: - Private Methods
+    private func loadMuseumItemDetails() {
+        let urlStr = MuseumItemDetailAPIClient.getSearchResultsURLStr(from: favoritableObject.id)
+        
+        MuseumItemDetailAPIClient.manager.getMuseumItemDetail(urlStr: urlStr) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let museumItemDetails):
+                    self?.museumItemplaqueDescription = museumItemDetails.plaqueDescriptionEnglish
+                }
+            }
+        }
+    }
+    
+    
     private func loadDataIntoObjects() {
         detailImageView.image = detailImage
-        detailTitleLabel.text = favoritableObject.name
+        nameLabel.text = favoritableObject.name
+        detailLabel.text = favoritableObject.details
         
         
         switch selectedExperience! {
         case UserExperience.ticketMaster:
-            detailTextView.textAlignment = .left
+            otherInfoTextView.textAlignment = .left
             
             //TODO: Add link to ticketmaster
-            detailTextView.text = """
-            Date & Time: \(favoritableObject.details)
+            otherInfoTextView.text = """
             Price range: \(favoritableObject.eventPrice ?? "No Price Posted")
             See in Ticketmaster: \(favoritableObject.eventLink ?? "No Link")
             """
         case UserExperience.rijksmuseum:
-            //TODO: Add more museum details from MuseumItemDetails
-            detailTextView.textAlignment = .justified
-            detailTextView.text = """
-            Place of production: \(favoritableObject.details)
-            """
+            otherInfoTextView.textAlignment = .justified
         }
         
         
