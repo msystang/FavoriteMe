@@ -50,6 +50,7 @@ class DetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadDataIntoObjects()
+        loadButtonImage()
     }
     
     //MARK: - IBAction Methods
@@ -93,6 +94,21 @@ class DetailsViewController: UIViewController {
             otherInfoTextView.textAlignment = .justified
         }
         
-        
+    }
+    
+    private func loadButtonImage() {
+        favoritableObject.existsInFavorites(userID: FirebaseAuthService.manager.currentUser!.uid) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let isFavoritedInFB):
+                switch isFavoritedInFB {
+                case true:
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                case false:
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+        }
     }
 }

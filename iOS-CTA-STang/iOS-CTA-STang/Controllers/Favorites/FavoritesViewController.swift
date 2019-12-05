@@ -54,6 +54,7 @@ class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         loadFavorites()
+        favoritesTableView.reloadData()
     }
     
     //MARK: - Objc Functions

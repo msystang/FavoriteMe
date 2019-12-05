@@ -15,14 +15,14 @@ extension SearchListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
-        
-        cell.layer.backgroundColor = UIColor.clear.cgColor
-        cell.imageActivityIndicator.startAnimating()
-        
         let favoritableObject = favoritableObjects[indexPath.row]
         
+        //Cell Labels
         cell.titleLabel.text = favoritableObject.name
         cell.detailLabel.text = favoritableObject.details
+        
+        //Cell Image
+        cell.imageActivityIndicator.startAnimating()
         
         if let urlStr = favoritableObject.photoUrl {
             ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
@@ -40,6 +40,21 @@ extension SearchListViewController: UITableViewDataSource {
             }
         } else {
             //TODO: add default img
+        }
+        
+        //Cell Button
+        favoritableObject.existsInFavorites(userID: currentUser.uid) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let isFavoritedInFB):
+                switch isFavoritedInFB {
+                case true:
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                case false:
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
         }
         
         //Cell Delegation

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension DetailsViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
@@ -21,10 +22,12 @@ extension DetailsViewController: FavoriteButtonDelegate {
                 switch isFavoritedInFB {
                 case false:
                     self?.saveFavoritableToFirestore(favoritableObject: self!.favoritableObject)
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 case true:
                     self?.deleteFavoritableFromFirebase(favoritableObject: self!.favoritableObject)
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
                 }
-                self?.changeButtonAppearance(favoritableObject: self!.favoritableObject, isFavoritedInFB: isFavoritedInFB)
+                
             }
         }
     }

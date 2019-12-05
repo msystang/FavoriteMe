@@ -17,10 +17,12 @@ extension FavoritesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
         let favorite = favorites[indexPath.row]
         
-        cell.imageActivityIndicator.startAnimating()
-        
+        //Cell Labels
         cell.titleLabel.text = favorite.name
         cell.detailLabel.text = favorite.details
+        
+        //Cell Image
+        cell.imageActivityIndicator.startAnimating()
         
         if let urlStr = favorite.photoUrl {
             ImageHelper.manager.getImage(urlStr: urlStr) { (result) in

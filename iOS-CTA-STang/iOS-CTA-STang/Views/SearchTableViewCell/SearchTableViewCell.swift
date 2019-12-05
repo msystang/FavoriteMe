@@ -44,27 +44,14 @@ class SearchTableViewCell: UITableViewCell {
     
     lazy var favoriteButton: UIButton = {
         let button = UIButton()
-        //TODO: Determine when to change this image
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
-//        button.setImage(currentButtonImage, for: .normal)
+        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         button.addTarget(self, action: #selector(favoriteButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
     
     //MARK: - Internal Properties
     var delegate: FavoriteButtonDelegate?
-    
-//    var isFavorited: Bool = false
-//
-//    var currentButtonImage: UIImage {
-//        switch isFavorited {
-//        case false:
-//            return UIImage(systemName: "heart")!
-//        case true:
-//            return UIImage(systemName: "heart.fill")!
-//        }
-//    }
-    
+
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
