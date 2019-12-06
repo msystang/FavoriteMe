@@ -13,6 +13,7 @@ extension SearchTableViewCell {
     func styleObjects() {
         UIDesign.styleNameLabel(titleLabel)
         UIDesign.styleDetailLabel(detailLabel)
+        UIDesign.styleFavoriteButton(favoriteButton)
     }
     
     //MARK: - Constraint Methods
