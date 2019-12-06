@@ -20,6 +20,8 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var otherInfoTextView: UITextView!
     
+    @IBOutlet weak var linkButton: UIButton!
+    
     @IBOutlet weak var favoriteButton: UIButton!
     
     //MARK: - Internal Properties
@@ -38,12 +40,9 @@ class DetailsViewController: UIViewController {
     
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
-        self.delegate = self
-        
         super.viewDidLoad()
-        if selectedExperience == UserExperience.rijksmuseum {
-            loadMuseumItemDetails()
-        }
+        self.delegate = self
+        toggleExperience()
         
     }
     
@@ -54,6 +53,15 @@ class DetailsViewController: UIViewController {
     }
     
     //MARK: - IBAction Methods
+    @IBAction func linkButtonPressed(_ sender: UIButton) {
+        if let url = NSURL(string: favoritableObject.eventLink!) {
+            UIApplication.shared.openURL(url as URL)
+        } else {
+            showAlert(title: "Invalid Link", message: "Could not load Ticketmaster link")
+        }
+    }
+    
+    
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         //TODO: Disable button until completion
         favoriteButton.isEnabled = false
@@ -63,6 +71,13 @@ class DetailsViewController: UIViewController {
     }
     
     //MARK: - Private Methods
+    private func toggleExperience() {
+        if selectedExperience == UserExperience.rijksmuseum {
+            loadMuseumItemDetails()
+            linkButton.isHidden = true
+        }
+    }
+    
     private func loadMuseumItemDetails() {
         let urlStr = MuseumItemDetailAPIClient.getSearchResultsURLStr(from: favoritableObject.id)
         
@@ -91,7 +106,6 @@ class DetailsViewController: UIViewController {
             //TODO: Add link to ticketmaster
             otherInfoTextView.text = """
             Price range: \(favoritableObject.eventPrice ?? "No Price Posted")
-            See in Ticketmaster: \(favoritableObject.eventLink ?? "No Link")
             """
         case UserExperience.rijksmuseum:
             otherInfoTextView.textAlignment = .justified
