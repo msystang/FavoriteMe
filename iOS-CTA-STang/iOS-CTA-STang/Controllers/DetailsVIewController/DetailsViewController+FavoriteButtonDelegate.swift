@@ -58,15 +58,5 @@ extension DetailsViewController: FavoriteButtonDelegate {
         }
     }
     
-//    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
-//        switch isFavoritedInFB {
-//        case true:
-//
-//        case false:
-//            //Change img
-//        }
-//    }
-
-    
 }
 

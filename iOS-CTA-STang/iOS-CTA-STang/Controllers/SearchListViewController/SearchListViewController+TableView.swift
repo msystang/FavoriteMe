@@ -80,8 +80,9 @@ extension SearchListViewController: UITableViewDelegate {
         detailsVC.selectedExperience = selectedExperience
         detailsVC.favoritableObject = favoritableObjects[indexPath.row]
         detailsVC.detailImage = cell.cellImageView.image
+        detailsVC.title = "Details"
         
-        self.present(detailsVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailsVC, animated: true)
         
     }
 }

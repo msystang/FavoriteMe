@@ -68,7 +68,6 @@ class SearchListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadUserInfo()
-        searchTableView.reloadData()
     }
     
     
@@ -124,6 +123,7 @@ class SearchListViewController: UIViewController {
         default:
             selectedExperience = UserExperience.ticketMaster
         }
+        determineUserExperience()
     }
     
     private func determineUserExperience() {
