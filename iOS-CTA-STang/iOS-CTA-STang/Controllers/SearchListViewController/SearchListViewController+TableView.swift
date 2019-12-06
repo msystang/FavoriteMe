@@ -23,9 +23,12 @@ extension SearchListViewController: UITableViewDataSource {
         
         //Cell Image
         //TODO: Cache images to be loaded in DetailVC and FavoritesVC
-//        cell.cellImageView.image = nil
+        //TODO: Deal with image flickering
+        cell.cellImageView.image = nil
         cell.imageActivityIndicator.startAnimating()
+        
         let noImage = UIImage(named: "no-image")
+        
         if let urlStr = favoritableObject.photoUrl {
             ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                 DispatchQueue.main.async {

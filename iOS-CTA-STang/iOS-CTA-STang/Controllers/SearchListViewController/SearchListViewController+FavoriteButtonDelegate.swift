@@ -15,7 +15,6 @@ extension SearchListViewController: FavoriteButtonDelegate {
         if let tag = tag {
             let favoritableObject = favoritableObjects[tag]
             
-            
             favoritableObject.existsInFavorites(userID: currentUser.uid) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
@@ -64,15 +63,5 @@ extension SearchListViewController: FavoriteButtonDelegate {
             }
         }
     }
-    
-//    func changeButtonAppearance(favoritableObject: Favoritable, isFavoritedInFB: Bool) {
-        //        switch isFavoritedInFB {
-        //        case true:
-        //
-        //        case false:
-        //            //Change img
-        //        }
-//    }
-    
     
 }

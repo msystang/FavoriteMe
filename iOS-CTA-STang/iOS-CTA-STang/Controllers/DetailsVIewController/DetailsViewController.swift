@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    //TODO: Only allow profile view?
+    //TODO: Only allow profile view for this VC
     
     //MARK: - UI Objects
     @IBOutlet weak var detailImageView: UIImageView!

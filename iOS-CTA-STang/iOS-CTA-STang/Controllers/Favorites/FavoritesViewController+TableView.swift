@@ -24,13 +24,15 @@ extension FavoritesViewController: UITableViewDataSource {
         //Cell Image
         cell.imageActivityIndicator.startAnimating()
         
+        let noImage = UIImage(named: "no-image")
+        
         if let urlStr = favorite.photoUrl {
             ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                 DispatchQueue.main.async {
                     switch result {
                     case .failure(let error):
                         print(error)
-                        //TODO: Load default image
+                        cell.cellImageView.image = noImage
                         cell.imageActivityIndicator.isHidden = true
                     case .success(let imageFromOnline):
                         cell.cellImageView.image = imageFromOnline
@@ -39,7 +41,7 @@ extension FavoritesViewController: UITableViewDataSource {
                 }
             }
         } else {
-            //TODO: add default img
+            cell.cellImageView.image = noImage
         }
         
         //Cell Delegation

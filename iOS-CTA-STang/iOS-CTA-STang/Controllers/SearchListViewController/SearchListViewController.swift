@@ -9,8 +9,6 @@
 import UIKit
 
 class SearchListViewController: UIViewController {
-    //TODO: Reload tableview when DetailVC is dismissed -> fav button must be updated
-    
     //MARK: - UI Objects
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()

@@ -67,11 +67,6 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     //MARK: - Cell Lifecycle Methods
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        self.cellImageView.image = nil
-//    }
-//    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -79,7 +74,6 @@ class SearchTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     

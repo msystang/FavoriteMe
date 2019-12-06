@@ -19,7 +19,6 @@ extension FavoritesViewController: FavoriteButtonDelegate {
         }
     }
     
-    
     func checkExistsInFavorites(tag: Int?) {
         if let tag = tag {
             let favorite = favorites[tag]
@@ -41,17 +40,5 @@ extension FavoritesViewController: FavoriteButtonDelegate {
             }
         }
     }
-    
-    //    func changeButtonAppearance() {
-    //Make this property somewhere more global?
-    //        switch isFavorited {
-    //        case true:
-    //            //Change img
-    //            isFavorited = false
-    //        case false:
-    //            //Change img
-    //            isFavorited = true
-    //        }
-    //    }
-    
+
 }

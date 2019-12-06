@@ -9,8 +9,6 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-    //TODO: Refresh tableview when an object is deleted
-    
     //MARK: - UI Objects
     lazy var favoritesTableView: UITableView = {
         let tableView = UITableView()
@@ -50,7 +48,6 @@ class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         loadFavorites()
-        //        favoritesTableView.reloadData()
     }
     
     //MARK: - Objc Functions
