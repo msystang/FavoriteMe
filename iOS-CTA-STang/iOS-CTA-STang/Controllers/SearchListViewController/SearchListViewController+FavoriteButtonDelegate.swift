@@ -11,7 +11,7 @@ import UIKit
 
 extension SearchListViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
-    func checkExistsInFavorites(tag: Int?) {
+    func checkExistsInFavorites(tag: Int?, completion: () -> ()) {
         if let tag = tag {
             let favoritableObject = favoritableObjects[tag]
             
@@ -33,12 +33,12 @@ extension SearchListViewController: FavoriteButtonDelegate {
                         self?.deleteFavoritableFromFirebase(favoritableObject: favoritableObject)
                         cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
                     }
-                    
                 }
             }
+            completion()
         }
     }
-    
+
     func saveFavoritableToFirestore(favoritableObject: Favoritable) {
         let newFavorite = Favorite(creatorID: currentUser.uid, favoritableObject: favoritableObject)
         

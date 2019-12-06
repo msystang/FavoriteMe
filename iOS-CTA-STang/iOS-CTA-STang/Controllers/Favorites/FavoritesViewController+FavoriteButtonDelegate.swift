@@ -9,7 +9,17 @@
 import Foundation
 
 extension FavoritesViewController: FavoriteButtonDelegate {
-    //MARK: - SearchCellDelegate Functions
+    func checkExistsInFavorites(tag: Int?, completion: () -> ()) {
+        if let tag = tag {
+            let favorite = favorites[tag]
+            let objectID = favorite.objectID
+            
+            deleteFavoritableFromFirebase(objectID: objectID)
+            completion()
+        }
+    }
+    
+    
     func checkExistsInFavorites(tag: Int?) {
         if let tag = tag {
             let favorite = favorites[tag]
@@ -21,26 +31,27 @@ extension FavoritesViewController: FavoriteButtonDelegate {
     
     func deleteFavoritableFromFirebase(objectID: String) {
         
-        FirestoreService.manager.deleteFavorite(forUserID: FirebaseAuthService.manager.currentUser!.uid, objectID: objectID) { (result) in
+        FirestoreService.manager.deleteFavorite(forUserID: FirebaseAuthService.manager.currentUser!.uid, objectID: objectID) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(()):
                 print("Removed from favorites")
+                self?.loadFavorites()
             }
         }
     }
     
-//    func changeButtonAppearance() {
-        //Make this property somewhere more global?
-        //        switch isFavorited {
-        //        case true:
-        //            //Change img
-        //            isFavorited = false
-        //        case false:
-        //            //Change img
-        //            isFavorited = true
-        //        }
-//    }
+    //    func changeButtonAppearance() {
+    //Make this property somewhere more global?
+    //        switch isFavorited {
+    //        case true:
+    //            //Change img
+    //            isFavorited = false
+    //        case false:
+    //            //Change img
+    //            isFavorited = true
+    //        }
+    //    }
     
 }

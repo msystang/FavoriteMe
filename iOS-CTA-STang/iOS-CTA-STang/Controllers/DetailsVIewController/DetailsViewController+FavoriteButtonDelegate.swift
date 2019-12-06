@@ -11,25 +11,25 @@ import UIKit
 
 extension DetailsViewController: FavoriteButtonDelegate {
     //MARK: - SearchCellDelegate Functions
-    func checkExistsInFavorites(tag: Int?) {
-        
+    func checkExistsInFavorites(tag: Int?, completion: () -> ()) {
         favoritableObject.existsInFavorites(userID: FirebaseAuthService.manager.currentUser!.uid) { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let isFavoritedInFB):
-                
-                switch isFavoritedInFB {
-                case false:
-                    self?.saveFavoritableToFirestore(favoritableObject: self!.favoritableObject)
-                    self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                case true:
-                    self?.deleteFavoritableFromFirebase(favoritableObject: self!.favoritableObject)
-                    self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                }
-                
-            }
-        }
+             switch result {
+             case .failure(let error):
+                 print(error)
+             case .success(let isFavoritedInFB):
+                 
+                 switch isFavoritedInFB {
+                 case false:
+                     self?.saveFavoritableToFirestore(favoritableObject: self!.favoritableObject)
+                     self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                 case true:
+                     self?.deleteFavoritableFromFirebase(favoritableObject: self!.favoritableObject)
+                     self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                 }
+                 
+             }
+         }
+        completion()
     }
     
     func saveFavoritableToFirestore(favoritableObject: Favoritable) {

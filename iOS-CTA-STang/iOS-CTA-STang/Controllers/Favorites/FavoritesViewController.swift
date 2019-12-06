@@ -77,7 +77,7 @@ class FavoritesViewController: UIViewController {
         })
     }
     
-    private func loadFavorites() {
+    func loadFavorites() {
         FirestoreService.manager.getFavorites(forUserID: FirebaseAuthService.manager.currentUser!.uid) {
             [weak self] (result) in
             switch result {

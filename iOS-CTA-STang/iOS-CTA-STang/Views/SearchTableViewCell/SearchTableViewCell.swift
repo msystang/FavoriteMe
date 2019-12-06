@@ -80,6 +80,10 @@ class SearchTableViewCell: UITableViewCell {
     
     //MARK: - Objc Functions
     @objc func favoriteButtonPressed(_ sender: UIButton) {
-        delegate?.checkExistsInFavorites(tag: sender.tag)
+        //TODO: Disable button until completion
+        favoriteButton.isEnabled = false
+        delegate?.checkExistsInFavorites(tag: sender.tag, completion: {
+            self.favoriteButton.isEnabled = true
+        })
     }
 }

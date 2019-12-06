@@ -55,7 +55,11 @@ class DetailsViewController: UIViewController {
     
     //MARK: - IBAction Methods
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
-        delegate?.checkExistsInFavorites(tag: nil)
+        //TODO: Disable button until completion
+        favoriteButton.isEnabled = false
+        delegate?.checkExistsInFavorites(tag: nil, completion: {
+            self.favoriteButton.isEnabled = true
+        })
     }
     
     //MARK: - Private Methods
