@@ -41,7 +41,10 @@
                                     <constraint firstAttribute="width" secondItem="BBK-Zk-gat" secondAttribute="height" multiplier="1:1" id="QhS-dz-uQN"/>
                                     <constraint firstAttribute="width" constant="50" id="Zbp-RP-iT1"/>
                                 </constraints>
-                                <state key="normal" image="heart" catalog="system"/>
+                                <color key="tintColor" red="0.52156862745098043" green="0.10980392156862745" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default"/>
+                                </state>
                                 <connections>
                                     <action selector="favoriteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K63-Xi-Tw2"/>
                                 </connections>
