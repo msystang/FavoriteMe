@@ -22,15 +22,16 @@ extension SearchListViewController: UITableViewDataSource {
         cell.detailLabel.text = favoritableObject.details
         
         //Cell Image
+        //TODO: Cache images to be loaded in DetailVC and FavoritesVC
         cell.imageActivityIndicator.startAnimating()
-        
+        let noImage = UIImage(named: "no-image")
         if let urlStr = favoritableObject.photoUrl {
             ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                 DispatchQueue.main.async {
                     switch result {
                     case .failure(let error):
                         print(error)
-                        //TODO: Load default image
+                        cell.cellImageView.image = noImage
                         cell.imageActivityIndicator.isHidden = true
                     case .success(let imageFromOnline):
                         cell.cellImageView.image = imageFromOnline
@@ -39,7 +40,7 @@ extension SearchListViewController: UITableViewDataSource {
                 }
             }
         } else {
-            //TODO: add default img
+            cell.cellImageView.image = noImage
         }
         
         //Cell Button
