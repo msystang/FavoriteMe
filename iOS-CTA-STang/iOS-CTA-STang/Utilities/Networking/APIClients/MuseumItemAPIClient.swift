@@ -17,7 +17,8 @@ class MuseumItemAPIClient {
     //MARK: - Instance Methods
     
     static func getSearchResultsURLStr(from searchString: String) -> String {
-        return "https://www.rijksmuseum.nl/api/en/collection?key=\(Secrets.rijksmuseumAPIKey)&format=json&q=\(searchString)&ps=20"
+        let formattedSearchString = searchString.replacingOccurrences(of: " ", with: "%20")
+        return "https://www.rijksmuseum.nl/api/en/collection?key=\(Secrets.rijksmuseumAPIKey)&format=json&q=\(formattedSearchString)&ps=20"
     }
     
     func getMuseumItem(urlStr: String, completionHandler: @escaping (Result<[MuseumItem], AppError>) -> ())  {
