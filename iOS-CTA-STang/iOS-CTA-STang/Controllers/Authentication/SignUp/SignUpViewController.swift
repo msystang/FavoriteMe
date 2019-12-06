@@ -51,6 +51,7 @@ class SignUpViewController: UIViewController {
         label.text = "Choose your experience:"
         label.textAlignment = .center
         label.textColor = .white
+        label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         return label
     }()
     

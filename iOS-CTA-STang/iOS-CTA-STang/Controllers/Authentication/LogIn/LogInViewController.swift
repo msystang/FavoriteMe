@@ -61,7 +61,6 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         addSubviews()
         addConstraints()
         styleObjects()
@@ -75,13 +74,13 @@ class LogInViewController: UIViewController {
     }
     
     @objc func loginButtonPressed() {
+        loginButton.isEnabled = false
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             showAlert(title: "Error", message: "Please fill out all fields.")
             return
         }
         
-        //TODO - remove whitespace (if any) from email/password
-        
+        //TODO:remove whitespace (if any) from email/password
         guard email.isValidEmail else {
             showAlert(title: "Error", message: "Please enter a valid email")
             return
@@ -94,6 +93,7 @@ class LogInViewController: UIViewController {
         
         FirebaseAuthService.manager.loginUser(email: email.lowercased(), password: password) { (result) in
             self.handleLoginResponse(with: result)
+            self.loginButton.isEnabled = true
         }
     }
     

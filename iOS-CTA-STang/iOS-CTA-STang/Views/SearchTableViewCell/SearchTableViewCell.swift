@@ -66,7 +66,12 @@ class SearchTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Misc Cell Methods
+    //MARK: - Cell Lifecycle Methods
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.cellImageView.image = nil
+//    }
+//    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
