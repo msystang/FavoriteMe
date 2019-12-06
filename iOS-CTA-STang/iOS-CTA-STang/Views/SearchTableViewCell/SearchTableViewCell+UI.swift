@@ -11,6 +11,7 @@ import UIKit
 extension SearchTableViewCell {
     //MARK: - UI Design
     func styleObjects() {
+        self.backgroundColor = .clear
         UIDesign.styleNameLabel(titleLabel)
         UIDesign.styleDetailLabel(detailLabel)
         UIDesign.styleFavoriteButton(favoriteButton)
