@@ -43,9 +43,9 @@ struct UIDesign {
     
     //MARK: - SearchBar
     static func styleSearchBar(_ searchBar: UISearchBar) {
-        //TODO: Change color of cursor and cancel button to brown and add in UIDesign as style
         searchBar.searchTextField.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         searchBar.searchTextField.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        searchBar.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
     }
     
     //MARK: - TextField
