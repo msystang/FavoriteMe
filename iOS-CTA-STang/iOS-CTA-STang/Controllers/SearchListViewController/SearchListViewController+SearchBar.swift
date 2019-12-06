@@ -19,9 +19,9 @@ extension SearchListViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchString = searchBar.text
+        searchBar.resignFirstResponder()
     }
-    
     
 }
