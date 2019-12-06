@@ -102,8 +102,6 @@ class DetailsViewController: UIViewController {
         switch selectedExperience! {
         case UserExperience.ticketMaster:
             otherInfoTextView.textAlignment = .left
-            
-            //TODO: Add link to ticketmaster
             otherInfoTextView.text = """
             Price range: \(favoritableObject.eventPrice ?? "No Price Posted")
             """
