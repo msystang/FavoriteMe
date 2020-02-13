@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DetailsViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" title="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DetailsViewController" customModule="iOS_CTA_STang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="raP-pP-4MV">
+                                <rect key="frame" x="30" y="74" width="354" height="354"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="raP-pP-4MV" secondAttribute="height" multiplier="1:1" id="Aiu-Mu-HG1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-df-ee6">
+                                <rect key="frame" x="30" y="512.5" width="354" height="229.5"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hh-Ji-49K">
+                                <rect key="frame" x="30" y="448" width="354" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBK-Zk-gat">
+                                <rect key="frame" x="182" y="792" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BBK-Zk-gat" secondAttribute="height" multiplier="1:1" id="QhS-dz-uQN"/>
+                                    <constraint firstAttribute="width" constant="50" id="Zbp-RP-iT1"/>
+                                </constraints>
+                                <color key="tintColor" red="0.52156862745098043" green="0.10980392156862745" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K63-Xi-Tw2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-ng-yTm">
+                                <rect key="frame" x="30" y="482" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaL-Bu-e5k">
+                                <rect key="frame" x="30" y="752" width="354" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <color key="tintColor" red="0.52156862749999999" green="0.10980392160000001" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="See in Ticketmaster"/>
+                                <connections>
+                                    <action selector="linkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1pG-ez-xle"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.6588235294117647" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0BA-L5-rpg"/>
+                            <constraint firstItem="eAO-df-ee6" firstAttribute="top" secondItem="dmM-ng-yTm" secondAttribute="bottom" constant="10" id="2Ie-mw-Vf3"/>
+                            <constraint firstItem="9Hh-Ji-49K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8B8-F9-Mv1"/>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="CDN-JS-dBi"/>
+                            <constraint firstItem="eAO-df-ee6" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="Ht5-04-Lik"/>
+                            <constraint firstItem="9Hh-Ji-49K" firstAttribute="top" secondItem="raP-pP-4MV" secondAttribute="bottom" constant="20" id="KXF-ZG-MiD"/>
+                            <constraint firstItem="9Hh-Ji-49K" firstAttribute="leading" secondItem="raP-pP-4MV" secondAttribute="leading" id="M5g-pQ-9W7"/>
+                            <constraint firstItem="jaL-Bu-e5k" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Mkx-mg-Shy"/>
+                            <constraint firstItem="dmM-ng-yTm" firstAttribute="top" secondItem="9Hh-Ji-49K" secondAttribute="bottom" constant="10" id="Oxs-B7-fjV"/>
+                            <constraint firstItem="eAO-df-ee6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vto-PW-wMn"/>
+                            <constraint firstItem="BBK-Zk-gat" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WvD-Cg-21y"/>
+                            <constraint firstItem="BBK-Zk-gat" firstAttribute="top" secondItem="jaL-Bu-e5k" secondAttribute="bottom" constant="10" id="ZkN-jo-cG6"/>
+                            <constraint firstItem="raP-pP-4MV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cAg-5f-qL3"/>
+                            <constraint firstItem="jaL-Bu-e5k" firstAttribute="leading" secondItem="eAO-df-ee6" secondAttribute="leading" id="ozc-Rd-TjQ"/>
+                            <constraint firstItem="raP-pP-4MV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rl9-WP-Dyl"/>
+                            <constraint firstItem="jaL-Bu-e5k" firstAttribute="top" secondItem="eAO-df-ee6" secondAttribute="bottom" constant="10" id="sAV-2q-khR"/>
+                            <constraint firstItem="raP-pP-4MV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="sMc-zU-OPh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBK-Zk-gat" secondAttribute="bottom" constant="20" id="uWh-LA-CYV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="raP-pP-4MV" id="sM3-Il-0BP"/>
+                        <outlet property="detailLabel" destination="dmM-ng-yTm" id="hxl-kZ-6KF"/>
+                        <outlet property="favoriteButton" destination="BBK-Zk-gat" id="8Fl-9f-u4r"/>
+                        <outlet property="linkButton" destination="jaL-Bu-e5k" id="DTJ-To-nE3"/>
+                        <outlet property="nameLabel" destination="9Hh-Ji-49K" id="U0D-3H-Tl3"/>
+                        <outlet property="otherInfoTextView" destination="eAO-df-ee6" id="IOX-5D-Ohy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+    </resources>
+</document>
