@@ -2,7 +2,7 @@
 
 ## App Description
 
-FavoriteMe is an iOS app that allows users to choose from a selection of APIs and pick their favorite items. This project is the Comprehensive Technical Assessment for the Pursuit.org's yearlong iOS Fellowship program. This Firebase-backed project has the following functionality:
+FavoriteMe is an iOS app that allows users to choose from a selection of APIs and pick their favorite items. This project is the Comprehensive Technical Assessment for the Pursuit.org's year-long iOS Fellowship program. This Firebase-backed project has the following functionality:
 
 - Users can create new accounts. When creating a new account, a user can choose which "experience" they want, as explained in the **API** section below.
 - Users can log in, log out, and open the app into their specified experience if they are already logged in.
@@ -12,7 +12,7 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - Tapping on a cell segues to a detail screen displaying more information about the item.
 - There is a tab that shows only the user's favorited items.  Tapping the heart icon unfavorites it and remove it from the favorites list.
 
-- For practice one View Controller was created using a Storyboard file, and the rest is created purely programmatically.
+- For practice, one View Controller was created using a Storyboard file, and the rest is created purely programmatically.
 - Unit test for models using XCTAssert.
 
 
@@ -44,7 +44,6 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 
 # UI
 
-
 ## Login Screen
 
 - Enter an email address.
@@ -53,14 +52,12 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 
 <img src="./images/loginScreen.png" width="300">
 
-
 ## Create Account Screen
 
 - Select which API you want to get information from.
 - Create a new account using email and password.
 
 <img src="./images/createAccountScreen.png" width="300">
-
 
 ## List Items Screen
 
@@ -73,7 +70,6 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - The navigation bar has an item that allows the user to log out.
 
 <img src="./images/listItemsScreen.png" width="300">
-
 
 ## Item Detail Screen
 
