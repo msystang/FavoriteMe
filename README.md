@@ -1,50 +1,33 @@
-# Pursuit-Core-iOS-Comprehensive-Technical-Assessment
-
-
-## Github Instructions
-
-Every fellow has been given a private repo for this assessment. Please follow these instructions:
-- Clone this repo.
-- Create a new branch for yourself, as `master` is protected from any merges.
-- Complete the sections below.
-- Commit often; a clean and logical commit history is part of the requirements of this project.
-- Add, commit and push your changes
-- Create a pull request from your repo to `master`, and tag the instruction team in your pull request.
-- Paste the link of your pull request into Canvas.
-
+# FavoriteMe
 
 ## App Description
 
-For this assessment, build an app that allows users to choose from a selection of APIs and pick their favorite items. You should create a Firebase-backed project with the following functionality:
+FavoriteMe is a practice app that allows users to choose from a selection of APIs and pick their favorite items. This Firebase-backed project has the following functionality:
 
 - Users can create new accounts. When creating a new account, a user can choose which "experience" they want, as explained in the **API** section below.
 - Users can log in, log out, and open the app into their specified experience if they are already logged in.
 - After logging in or creating an account, the user is presented with a screen that displays a list of information from their selected experience.
-- Each cell should have a heart icon that the user can tap to favorite the item.
-- If the item has already been favorited, the heart should load as filled in, and tapping it should "unfavorite" the cell.
-- Tapping on a cell should segue to a detail screen displaying more information about the item.
-- There should also be a tab that shows only the user's favorited items.  Tapping the heart icon should unfavorite it and remove it from the favorites list. You do not need a detail screen for this section.
+- Each cell has a heart icon that the user can tap to favorite the item.
+- If the item has already been favorited, the heart loads as filled in, and tapping it should "unfavorite" the cell.
+- Tapping on a cell segues to a detail screen displaying more information about the item.
+- There is a tab that shows only the user's favorited items.  Tapping the heart icon unfavorites it and remove it from the favorites list.
 
-For building your UI, you must build at least one View Controller using a Storyboard file, and at least one View Controller purely programmatically.
-
-You **must** unit test your models.
+- For practice one View Controller was created using a Storyboard file, and the rest is created purely programmatically.
+- Unit test for models using XCTAssert.
 
 
 ## Frameworks
 
-- Use Firebase Auth to manage account creation and signing in.
-- Use Firebase Firestore to manage user accounts and the items that have been favorited.
+- Firebase Auth to manage account creation and signing in.
+- Firebase Firestore to manage user accounts and the items that have been favorited.
 
 
 ## Auth
 
-- A user should be able to create a new account by entering their email and password, and selecting the experience they wish to have in the app.
-- A user should be able to log in to their account if they already have one.
-- A user should be able to bypass log in if they are still logged in as the current user. You should *persist* that user's preferred experience so that the information can be retrieved when the app loads.
-- A user should be able to log out of their account from a button in the list view controllers.
-
-[Firebase Auth Documentation on "user lifecycle"](https://firebase.google.com/docs/auth/users#the_user_lifecycle)
-[Firebase Auth Documentation for .signOut](https://firebase.google.com/docs/reference/ios/firebaseauth/api/reference/Classes/FIRAuth#-signout:).
+- A user will be able to create a new account by entering their email and password, and selecting the experience they wish to have in the app.
+- A user will be able to log in to their account if they already have one.
+- A user will be able to bypass log in if they are still logged in as the current user. A user's preferred experience is persisted so that the information can be retrieved when the app loads.
+- A user can log out of their account from a button in the list view controllers.
 
 
 ### Here is a sample entry in a `users` Firestore collection:
@@ -61,15 +44,6 @@ You **must** unit test your models.
 |---|---|---|---|
 | Ticketmaster | Yes | Use their [discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/) to load all events at a location that the user searches for.  Include an image, the name of the event, and the time the event starts | In addition to the info from the Table View, display the price ranges and a link to the event.
 | Rijksmuseum | Yes | Use their [Collection API](https://data.rijksmuseum.nl/object-metadata/api/) to load all museum items from a name that the user searches for.  Include an image and the title of the item. | Use the [Collection Details API](https://data.rijksmuseum.nl/object-metadata/api/) to load additional information about the select item including its plaque Description in English, its date it was created, and the place it was produced. Kijk uit voor dit schilderij "de nachtwacht." Het is erg groot.
-
-
-## Rubric
-
-![rubricPartOne](./images/rubricPartOne.png)
-
-![rubricPartTwo](./images/rubricPartTwo.png)
-
-![rubricPartThree](./images/rubricPartThree.png)
 
 
 # UI
