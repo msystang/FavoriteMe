@@ -14,7 +14,7 @@ class LogInViewController: UIViewController {
     //MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Events and Dutch Art!"
+        label.text = "FavoriteMe"
         return label
     }()
     
