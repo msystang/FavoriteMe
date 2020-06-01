@@ -51,7 +51,7 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - Enter a password.
 - Log in to an existing account.
 
-![loginScreen](./images/loginScreen.png)
+![loginScreen](./images/loginScreen.png | width=100)
 
 
 ## Create Account Screen
@@ -59,7 +59,7 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - Select which API you want to get information from.
 - Create a new account using email and password.
 
-![createAccountScreen](./images/createAccountScreen.png)
+![createAccountScreen](./images/createAccountScreen.png | width=100)
 
 
 ## List Items Screen
@@ -72,14 +72,14 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - Selecting a cell segues to a detail View Controller that displays additional information about that Thing.
 - The navigation bar has an item that allows the user to log out.
 
-![listItemsScreen](./images/listItemsWithLogoutScreen.png)
+![listItemsScreen](./images/listItemsScreen.png | width=100)
 
 
 ## Item Detail Screen
 
 - Shows additional information about the selected Thing.
 
-![itemDetailScreen](./images/itemDetailScreen.png)
+![itemDetailScreen](./images/itemDetailScreen.png | width=100)
 
 
 ## Favorite Items Screen
@@ -89,7 +89,7 @@ FavoriteMe is an iOS app that allows users to choose from a selection of APIs an
 - Each cell contains a favorite button which the user can tap to unfavorite the Thing. Tapping the button should change both the UI and the backend.
 - The navigation bar has an item that allows the user to log out.
 
-![favoriteItemsScreen](./images/favoriteItemsScreenWithLogout.png)
+![favoriteItemsScreen](./images/favoriteItemsScreen.png | width=100)
 
 
 ## Stretch
