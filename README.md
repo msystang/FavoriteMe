@@ -2,7 +2,7 @@
 
 ## App Description
 
-FavoriteMe is a practice app that allows users to choose from a selection of APIs and pick their favorite items. This Firebase-backed project has the following functionality:
+FavoriteMe is an iOS app that allows users to choose from a selection of APIs and pick their favorite items. This project is the Comprehensive Technical Assessment for the Pursuit.org's yearlong iOS Fellowship program. This Firebase-backed project has the following functionality:
 
 - Users can create new accounts. When creating a new account, a user can choose which "experience" they want, as explained in the **API** section below.
 - Users can log in, log out, and open the app into their specified experience if they are already logged in.
